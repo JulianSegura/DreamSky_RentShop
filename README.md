@@ -13,8 +13,11 @@ Gladinston Brazoban
 
 # To-Do
 Semana 1  
-Diagrama de flujo del negocio  
+Diagrama de flujo del negocio (Completado)  
 Casos de uso  
 Diccionario de datos  
 Diagrama de clases  
-SRS
+SRS  
+
+Semana 2  
+Crear proyecto en VS con sus capas correspondientes (Completado)  
