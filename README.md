@@ -8,7 +8,6 @@ Francis Castro
 Dionisio Polanco  
 Hector Amarante  
 Wilson Vargas  
-Juan Carlos  
 Gladinston Brazoban
 
 # To-Do
@@ -24,6 +23,6 @@ Crear proyecto en VS con sus capas correspondientes (Completado)
 
 Semana 3  
 Diseñar concepto de formularios  
-Crear clases en proyecto entidades  
+Crear clases en proyecto entidades (completado)  
 Crear tablas en base de datos
 
