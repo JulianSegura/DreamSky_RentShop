@@ -16,7 +16,7 @@ namespace UserInterfaceLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmCategoriaProductos());
+            Application.Run(new Form1());
         }
     }
 }
