@@ -8,16 +8,21 @@ Francis Castro
 Dionisio Polanco  
 Hector Amarante  
 Wilson Vargas  
-Juan Carlos  
 Gladinston Brazoban
 
 # To-Do
 Semana 1  
 Diagrama de flujo del negocio (Completado)  
-Casos de uso  
-Diccionario de datos  
+Casos de uso (Completado)  
+Diccionario de datos (Completado)  
 Diagrama de clases  
 SRS  
 
 Semana 2  
 Crear proyecto en VS con sus capas correspondientes (Completado)  
+
+Semana 3  
+Diseñar concepto de formularios  
+Crear clases en proyecto entidades (completado)  
+Crear tablas en base de datos
+
