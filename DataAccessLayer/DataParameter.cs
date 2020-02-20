@@ -5,19 +5,19 @@ using System.Data;//se debe agregar este Using porque vamos a trabajar con datos
 
 namespace DataAccessLayer
 {
-    public class DataParameters
+    public class DataParameter
     {
         //Declaramos los parametros. Se ponen los atributos de los parametros en SQL
 
-        private string Name { get; set; }
-        private object Value { get; set; }
-        private SqlDbType DataType { get; set; }
-        private int Size { get; set; }
-        private ParameterDirection Direction { get; set; }
+        public string Name { get; set; }
+        public object Value { get; set; }
+        public SqlDbType DataType { get; set; }
+        public int Size { get; set; }
+        public ParameterDirection Direction { get; set; }
 
         //Declaramos los constructores
         //Parametros de entrada en SQL
-        public DataParameters(string _name, object _value)
+        public DataParameter(string _name, object _value)
         {
             Name = _name;
             Value = _value;
@@ -25,7 +25,7 @@ namespace DataAccessLayer
         }
         //Parametros de salida en SQL
 
-        public DataParameters(string _name,SqlDbType _datatype,int _size)
+        public DataParameter(string _name,SqlDbType _datatype,int _size)
         {
             Name = _name;
             DataType = _datatype;
