@@ -22,7 +22,7 @@ Semana 2
 Crear proyecto en VS con sus capas correspondientes (Completado)  
 
 Semana 3  
-Diseñar concepto de formularios  
+Diseñar concepto de formularios (en proceso - Francis Castro)  
 Crear clases en proyecto entidades (completado)  
-Crear tablas en base de datos
+Crear tablas en base de datos (Completado)
 
