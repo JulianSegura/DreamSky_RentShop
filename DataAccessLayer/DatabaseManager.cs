@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace DataAccessLayer
 {
     public class DatabaseManager
     {
+        private ConnectionStringSettingsCollection cn=
         private SqlConnection Connection = new SqlConnection("Server = JULIANSEGURA-PC; Database=DreamSky-RentShop;Trusted_Connection=True;");
 
 
