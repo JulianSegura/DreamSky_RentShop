@@ -9,8 +9,8 @@ namespace DataAccessLayer
 {
     public class DatabaseManager
     {
-        private ConnectionStringSettingsCollection cn=
-        private SqlConnection Connection = new SqlConnection("Server = JULIANSEGURA-PC; Database=DreamSky-RentShop;Trusted_Connection=True;");
+        private static string cnStr = ConfigurationManager.ConnectionStrings["JulianDB"].ConnectionString;
+        private SqlConnection Connection = new SqlConnection(cnStr);
 
 
         //Metodos para abrir y cerrar conexion a la BD
