@@ -36,5 +36,10 @@ namespace UserInterfaceLayer
 
             Form2_Load(sender, e);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

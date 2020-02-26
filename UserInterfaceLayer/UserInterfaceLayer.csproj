@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Documents\UAPA\Trimestre 5\Programación III\Design Dashboard Modern\ICONOS\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
@@ -44,6 +48,7 @@
     <Reference Include="System.Data.SqlClient, Version=4.5.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.6.1\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Deployment" />
@@ -65,6 +70,24 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -72,6 +95,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -106,6 +138,48 @@
       <Project>{705f14b6-1280-46d9-baf9-13b2940a8d43}</Project>
       <Name>DreamSkyEntities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close Window_ 2 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Maximize Window_2 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Minimize Window_2 48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Restore Window 2_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RhaegarlogoBR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO-AZUL.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\uapa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo 3 png.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo3 PNG.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

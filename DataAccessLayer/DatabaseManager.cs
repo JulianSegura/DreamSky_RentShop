@@ -101,7 +101,7 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
 
-                throw ex;
+               /* throw ex;*/
             }
 
             return dt;

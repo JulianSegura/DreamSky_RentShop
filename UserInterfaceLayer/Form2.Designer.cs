@@ -33,14 +33,16 @@
             this.dgvDetails = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetails)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(272, 33);
+            this.btnSave.Location = new System.Drawing.Point(363, 41);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(100, 28);
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Guardar";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -49,9 +51,10 @@
             // chkActive
             // 
             this.chkActive.AutoSize = true;
-            this.chkActive.Location = new System.Drawing.Point(210, 39);
+            this.chkActive.Location = new System.Drawing.Point(280, 48);
+            this.chkActive.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chkActive.Name = "chkActive";
-            this.chkActive.Size = new System.Drawing.Size(56, 17);
+            this.chkActive.Size = new System.Drawing.Size(68, 21);
             this.chkActive.TabIndex = 1;
             this.chkActive.Text = "Activo";
             this.chkActive.UseVisualStyleBackColor = true;
@@ -61,39 +64,56 @@
             this.dgvDetails.AllowUserToAddRows = false;
             this.dgvDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetails.Location = new System.Drawing.Point(12, 62);
+            this.dgvDetails.Location = new System.Drawing.Point(16, 76);
+            this.dgvDetails.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvDetails.MultiSelect = false;
             this.dgvDetails.Name = "dgvDetails";
             this.dgvDetails.RowHeadersVisible = false;
-            this.dgvDetails.Size = new System.Drawing.Size(335, 150);
+            this.dgvDetails.RowHeadersWidth = 51;
+            this.dgvDetails.Size = new System.Drawing.Size(447, 185);
             this.dgvDetails.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(16, 22);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 13);
+            this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Nombre Categoria";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(15, 34);
+            this.txtName.Location = new System.Drawing.Point(20, 42);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(186, 20);
+            this.txtName.Size = new System.Drawing.Size(247, 22);
             this.txtName.TabIndex = 4;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(363, 269);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 28);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Cerrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(355, 220);
+            this.ClientSize = new System.Drawing.Size(479, 304);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvDetails);
             this.Controls.Add(this.chkActive);
             this.Controls.Add(this.btnSave);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form2";
@@ -112,6 +132,7 @@
         private System.Windows.Forms.DataGridView dgvDetails;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.Button button1;
     }
 
 }
