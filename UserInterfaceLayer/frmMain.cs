@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }
@@ -57,12 +57,13 @@ namespace UserInterfaceLayer
                 Sidebar.Visible = false;
                 Sidebar.Width = 202;
                 SidebarWrapper.Width = 226;
-                Separador.Width = 189;
+                Separador.Width = 252;
                 AnimacionSider2.Show(Sidebar);
                 label1.Text = "OCULTAR MENÚ";
             }
                                                       
         }
+
         private Form activeForm = null;
         private void Formhijo(Form formulariohijo)
         {
@@ -81,7 +82,6 @@ namespace UserInterfaceLayer
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
             Formhijo(new Form3());
-
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -93,7 +93,5 @@ namespace UserInterfaceLayer
         {
             Formhijo(new Form());
         }
-
-
     }
 }
