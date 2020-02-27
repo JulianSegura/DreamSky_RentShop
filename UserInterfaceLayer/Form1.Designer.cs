@@ -29,18 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.MenuTop = new System.Windows.Forms.Panel();
+            this.Restore = new System.Windows.Forms.PictureBox();
+            this.Minimizar = new System.Windows.Forms.PictureBox();
+            this.Maximizar = new System.Windows.Forms.PictureBox();
+            this.Salir = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Menusidebar = new System.Windows.Forms.PictureBox();
             this.SidebarWrapper = new System.Windows.Forms.Panel();
-            this.CurvaSlidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
-            this.AnimacionSider1 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.AnimacionSider2 = new BunifuAnimatorNS.BunifuTransition(this.components);
-            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.Formhijos = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton7 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Sidebar = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.bunifuFlatButton6 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -52,22 +51,23 @@
             this.Separador = new Bunifu.Framework.UI.BunifuSeparator();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.Restore = new System.Windows.Forms.PictureBox();
-            this.Minimizar = new System.Windows.Forms.PictureBox();
-            this.Maximizar = new System.Windows.Forms.PictureBox();
-            this.Salir = new System.Windows.Forms.PictureBox();
-            this.Menusidebar = new System.Windows.Forms.PictureBox();
+            this.CurvaSlidebar = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.AnimacionSider1 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.Formhijos = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.AnimacionSider2 = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.MenuTop.SuspendLayout();
-            this.SidebarWrapper.SuspendLayout();
-            this.Formhijos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.Sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Salir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menusidebar)).BeginInit();
+            this.SidebarWrapper.SuspendLayout();
+            this.Sidebar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Formhijos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuTop
@@ -88,6 +88,63 @@
             this.MenuTop.Size = new System.Drawing.Size(1100, 80);
             this.MenuTop.TabIndex = 0;
             // 
+            // Restore
+            // 
+            this.Restore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimacionSider1.SetDecoration(this.Restore, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.Restore, BunifuAnimatorNS.DecorationType.None);
+            this.Restore.Image = global::UserInterfaceLayer.Properties.Resources.Restore_Window_2_48px;
+            this.Restore.Location = new System.Drawing.Point(1020, 12);
+            this.Restore.Name = "Restore";
+            this.Restore.Size = new System.Drawing.Size(30, 30);
+            this.Restore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Restore.TabIndex = 5;
+            this.Restore.TabStop = false;
+            this.Restore.Visible = false;
+            this.Restore.Click += new System.EventHandler(this.Restore_Click);
+            // 
+            // Minimizar
+            // 
+            this.Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimacionSider1.SetDecoration(this.Minimizar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.Minimizar, BunifuAnimatorNS.DecorationType.None);
+            this.Minimizar.Image = global::UserInterfaceLayer.Properties.Resources.Minimize_Window_2_48px;
+            this.Minimizar.Location = new System.Drawing.Point(984, 12);
+            this.Minimizar.Name = "Minimizar";
+            this.Minimizar.Size = new System.Drawing.Size(30, 30);
+            this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Minimizar.TabIndex = 4;
+            this.Minimizar.TabStop = false;
+            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
+            // 
+            // Maximizar
+            // 
+            this.Maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimacionSider1.SetDecoration(this.Maximizar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.Maximizar, BunifuAnimatorNS.DecorationType.None);
+            this.Maximizar.Image = global::UserInterfaceLayer.Properties.Resources.Maximize_Window_2_48px;
+            this.Maximizar.Location = new System.Drawing.Point(1020, 12);
+            this.Maximizar.Name = "Maximizar";
+            this.Maximizar.Size = new System.Drawing.Size(30, 30);
+            this.Maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Maximizar.TabIndex = 3;
+            this.Maximizar.TabStop = false;
+            this.Maximizar.Click += new System.EventHandler(this.Maximizar_Click);
+            // 
+            // Salir
+            // 
+            this.Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AnimacionSider1.SetDecoration(this.Salir, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.Salir, BunifuAnimatorNS.DecorationType.None);
+            this.Salir.Image = global::UserInterfaceLayer.Properties.Resources.Close_Window__2_48px;
+            this.Salir.Location = new System.Drawing.Point(1056, 12);
+            this.Salir.Name = "Salir";
+            this.Salir.Size = new System.Drawing.Size(30, 30);
+            this.Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Salir.TabIndex = 2;
+            this.Salir.TabStop = false;
+            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -100,6 +157,19 @@
             this.label1.Size = new System.Drawing.Size(171, 26);
             this.label1.TabIndex = 1;
             this.label1.Text = "OCUTAL MENÚ";
+            // 
+            // Menusidebar
+            // 
+            this.AnimacionSider1.SetDecoration(this.Menusidebar, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.Menusidebar, BunifuAnimatorNS.DecorationType.None);
+            this.Menusidebar.Image = global::UserInterfaceLayer.Properties.Resources.Menu_48px;
+            this.Menusidebar.Location = new System.Drawing.Point(13, 24);
+            this.Menusidebar.Name = "Menusidebar";
+            this.Menusidebar.Size = new System.Drawing.Size(30, 30);
+            this.Menusidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Menusidebar.TabIndex = 0;
+            this.Menusidebar.TabStop = false;
+            this.Menusidebar.Click += new System.EventHandler(this.Menusidebar_Click);
             // 
             // SidebarWrapper
             // 
@@ -114,86 +184,6 @@
             this.SidebarWrapper.Name = "SidebarWrapper";
             this.SidebarWrapper.Size = new System.Drawing.Size(300, 568);
             this.SidebarWrapper.TabIndex = 1;
-            // 
-            // CurvaSlidebar
-            // 
-            this.CurvaSlidebar.ElipseRadius = 7;
-            this.CurvaSlidebar.TargetControl = this;
-            // 
-            // AnimacionSider1
-            // 
-            this.AnimacionSider1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
-            this.AnimacionSider1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 1;
-            animation4.Padding = new System.Windows.Forms.Padding(100, 50, 100, 150);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 2F;
-            animation4.TransparencyCoeff = 0F;
-            this.AnimacionSider1.DefaultAnimation = animation4;
-            // 
-            // AnimacionSider2
-            // 
-            this.AnimacionSider2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
-            this.AnimacionSider2.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 20;
-            animation3.Padding = new System.Windows.Forms.Padding(30);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionSider2.DefaultAnimation = animation3;
-            // 
-            // MoverDashboard
-            // 
-            this.MoverDashboard.Fixed = true;
-            this.MoverDashboard.Horizontal = true;
-            this.MoverDashboard.TargetControl = this.MenuTop;
-            this.MoverDashboard.Vertical = true;
-            // 
-            // Formhijos
-            // 
-            this.Formhijos.BackColor = System.Drawing.Color.PaleGreen;
-            this.Formhijos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Formhijos.Controls.Add(this.pictureBox2);
-            this.AnimacionSider2.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider1.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
-            this.Formhijos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Formhijos.Location = new System.Drawing.Point(300, 80);
-            this.Formhijos.Name = "Formhijos";
-            this.Formhijos.Size = new System.Drawing.Size(800, 568);
-            this.Formhijos.TabIndex = 2;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.AnimacionSider1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
-            this.pictureBox2.Image = global::UserInterfaceLayer.Properties.Resources.Logo3_PNG;
-            this.pictureBox2.Location = new System.Drawing.Point(159, 164);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(430, 208);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
             // 
             // bunifuFlatButton7
             // 
@@ -527,75 +517,85 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // Restore
+            // CurvaSlidebar
             // 
-            this.Restore.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnimacionSider1.SetDecoration(this.Restore, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.Restore, BunifuAnimatorNS.DecorationType.None);
-            this.Restore.Image = global::UserInterfaceLayer.Properties.Resources.Restore_Window_2_48px;
-            this.Restore.Location = new System.Drawing.Point(1020, 12);
-            this.Restore.Name = "Restore";
-            this.Restore.Size = new System.Drawing.Size(30, 30);
-            this.Restore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Restore.TabIndex = 5;
-            this.Restore.TabStop = false;
-            this.Restore.Visible = false;
-            this.Restore.Click += new System.EventHandler(this.Restore_Click);
+            this.CurvaSlidebar.ElipseRadius = 7;
+            this.CurvaSlidebar.TargetControl = this;
             // 
-            // Minimizar
+            // AnimacionSider1
             // 
-            this.Minimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnimacionSider1.SetDecoration(this.Minimizar, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.Minimizar, BunifuAnimatorNS.DecorationType.None);
-            this.Minimizar.Image = global::UserInterfaceLayer.Properties.Resources.Minimize_Window_2_48px;
-            this.Minimizar.Location = new System.Drawing.Point(984, 12);
-            this.Minimizar.Name = "Minimizar";
-            this.Minimizar.Size = new System.Drawing.Size(30, 30);
-            this.Minimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Minimizar.TabIndex = 4;
-            this.Minimizar.TabStop = false;
-            this.Minimizar.Click += new System.EventHandler(this.Minimizar_Click);
+            this.AnimacionSider1.AnimationType = BunifuAnimatorNS.AnimationType.Particles;
+            this.AnimacionSider1.Cursor = null;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 1;
+            animation1.Padding = new System.Windows.Forms.Padding(50, 50, 50, 150);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 2F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionSider1.DefaultAnimation = animation1;
             // 
-            // Maximizar
+            // Formhijos
             // 
-            this.Maximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnimacionSider1.SetDecoration(this.Maximizar, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.Maximizar, BunifuAnimatorNS.DecorationType.None);
-            this.Maximizar.Image = global::UserInterfaceLayer.Properties.Resources.Maximize_Window_2_48px;
-            this.Maximizar.Location = new System.Drawing.Point(1020, 12);
-            this.Maximizar.Name = "Maximizar";
-            this.Maximizar.Size = new System.Drawing.Size(30, 30);
-            this.Maximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Maximizar.TabIndex = 3;
-            this.Maximizar.TabStop = false;
-            this.Maximizar.Click += new System.EventHandler(this.Maximizar_Click);
+            this.Formhijos.BackColor = System.Drawing.Color.PaleGreen;
+            this.Formhijos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Formhijos.Controls.Add(this.pictureBox2);
+            this.AnimacionSider2.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider1.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
+            this.Formhijos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Formhijos.Location = new System.Drawing.Point(300, 80);
+            this.Formhijos.Name = "Formhijos";
+            this.Formhijos.Size = new System.Drawing.Size(800, 568);
+            this.Formhijos.TabIndex = 2;
             // 
-            // Salir
+            // pictureBox2
             // 
-            this.Salir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.AnimacionSider1.SetDecoration(this.Salir, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.Salir, BunifuAnimatorNS.DecorationType.None);
-            this.Salir.Image = global::UserInterfaceLayer.Properties.Resources.Close_Window__2_48px;
-            this.Salir.Location = new System.Drawing.Point(1056, 12);
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(30, 30);
-            this.Salir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Salir.TabIndex = 2;
-            this.Salir.TabStop = false;
-            this.Salir.Click += new System.EventHandler(this.Salir_Click);
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.AnimacionSider1.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider2.SetDecoration(this.pictureBox2, BunifuAnimatorNS.DecorationType.None);
+            this.pictureBox2.Image = global::UserInterfaceLayer.Properties.Resources.Logo3_PNG;
+            this.pictureBox2.Location = new System.Drawing.Point(159, 164);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(430, 208);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
-            // Menusidebar
+            // AnimacionSider2
             // 
-            this.AnimacionSider1.SetDecoration(this.Menusidebar, BunifuAnimatorNS.DecorationType.None);
-            this.AnimacionSider2.SetDecoration(this.Menusidebar, BunifuAnimatorNS.DecorationType.None);
-            this.Menusidebar.Image = global::UserInterfaceLayer.Properties.Resources.Menu_48px;
-            this.Menusidebar.Location = new System.Drawing.Point(13, 24);
-            this.Menusidebar.Name = "Menusidebar";
-            this.Menusidebar.Size = new System.Drawing.Size(30, 30);
-            this.Menusidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Menusidebar.TabIndex = 0;
-            this.Menusidebar.TabStop = false;
-            this.Menusidebar.Click += new System.EventHandler(this.Menusidebar_Click);
+            this.AnimacionSider2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
+            this.AnimacionSider2.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 20;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.AnimacionSider2.DefaultAnimation = animation2;
+            // 
+            // MoverDashboard
+            // 
+            this.MoverDashboard.Fixed = true;
+            this.MoverDashboard.Horizontal = true;
+            this.MoverDashboard.TargetControl = this.MenuTop;
+            this.MoverDashboard.Vertical = true;
             // 
             // Form1
             // 
@@ -614,18 +614,18 @@
             this.Text = "Form1";
             this.MenuTop.ResumeLayout(false);
             this.MenuTop.PerformLayout();
-            this.SidebarWrapper.ResumeLayout(false);
-            this.Formhijos.ResumeLayout(false);
-            this.Formhijos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.Sidebar.ResumeLayout(false);
-            this.Sidebar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Restore)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Maximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Salir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Menusidebar)).EndInit();
+            this.SidebarWrapper.ResumeLayout(false);
+            this.Sidebar.ResumeLayout(false);
+            this.Sidebar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Formhijos.ResumeLayout(false);
+            this.Formhijos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

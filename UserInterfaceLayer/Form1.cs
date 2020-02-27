@@ -43,7 +43,7 @@ namespace UserInterfaceLayer
 
         private void Menusidebar_Click(object sender, EventArgs e)
         {
-            if(Sidebar.Width == 270)
+            if(Sidebar.Width > 200)
             {
                 Sidebar.Visible = false;
                 Sidebar.Width = 45;
@@ -55,9 +55,9 @@ namespace UserInterfaceLayer
             else
             {
                 Sidebar.Visible = false;
-                Sidebar.Width = 270;
-                SidebarWrapper.Width = 300;
-                Separador.Width = 252;
+                Sidebar.Width = 202;
+                SidebarWrapper.Width = 226;
+                Separador.Width = 189;
                 AnimacionSider2.Show(Sidebar);
                 label1.Text = "OCULTAR MENÚ";
             }
@@ -93,5 +93,7 @@ namespace UserInterfaceLayer
         {
             Formhijo(new Form());
         }
+
+
     }
 }
