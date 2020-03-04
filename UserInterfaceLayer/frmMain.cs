@@ -50,7 +50,7 @@ namespace UserInterfaceLayer
                 SidebarWrapper.Width = 70;
                 Separador.Width = 35;
                 AnimacionSider1.Show(Sidebar);
-                label1.Text = "MOSTRAR MENÚ";
+                label1.Text = "MENÚ";
             }
             else
             {
@@ -81,17 +81,31 @@ namespace UserInterfaceLayer
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Formhijo(new Form3());
+            Formhijo(new frmMaestros());
+                        
+
+                bunifuFlatButton1.Enabled = false;
+            bunifuFlatButton2.Enabled = true;
+            lblFormActual.Text = "MAESTROS";
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
             Formhijo(new Form4());
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = false;
+            lblFormActual.Text = "OTRA COSA";
+            lblFormActual.Visible = true;
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             Formhijo(new Form());
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            lblFormActual.Visible = false;
         }
     }
 }

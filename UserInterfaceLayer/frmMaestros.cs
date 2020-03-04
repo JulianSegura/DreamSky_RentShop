@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
-    public partial class Form4 : Form
+    public partial class frmMaestros : Form
     {
-        public Form4()
+        public frmMaestros()
         {
             InitializeComponent();
         }
@@ -20,7 +20,6 @@ namespace UserInterfaceLayer
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-  
         }
     }
 }
