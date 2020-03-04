@@ -73,6 +73,16 @@ namespace UserInterfaceLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Dream_Logo {
+            get {
+                object obj = ResourceManager.GetObject("Dream Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -186,6 +196,26 @@ namespace UserInterfaceLayer.Properties {
         internal static System.Drawing.Bitmap RhaegarlogoBR {
             get {
                 object obj = ResourceManager.GetObject("RhaegarlogoBR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Splash {
+            get {
+                object obj = ResourceManager.GetObject("Splash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Splash1 {
+            get {
+                object obj = ResourceManager.GetObject("Splash1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

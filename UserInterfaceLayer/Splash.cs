@@ -10,16 +10,18 @@ using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
-    public partial class Form3 : Form
+    public partial class Splash : Form
     {
-        public Form3()
+        public Splash()
         {
             InitializeComponent();
+           /*this.TransparencyKey = (BackColor);*/
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            this.Close();
+            this.progressBar1.Increment(3);
+            if (progressBar1.Value == 100) this.timer1.Stop();
         }
     }
 }
