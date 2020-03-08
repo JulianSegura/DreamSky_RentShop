@@ -73,6 +73,26 @@ namespace UserInterfaceLayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Desing {
+            get {
+                object obj = ResourceManager.GetObject("Desing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Desing_2 {
+            get {
+                object obj = ResourceManager.GetObject("Desing 2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Dream_Logo {
             get {
                 object obj = ResourceManager.GetObject("Dream Logo", resourceCulture);
@@ -176,6 +196,16 @@ namespace UserInterfaceLayer.Properties {
         internal static System.Drawing.Bitmap Minimize_Window_2_48px {
             get {
                 object obj = ResourceManager.GetObject("Minimize Window_2 48px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngocean_com {
+            get {
+                object obj = ResourceManager.GetObject("pngocean.com", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

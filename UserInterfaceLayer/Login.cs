@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace UserInterfaceLayer
 {
@@ -14,9 +15,13 @@ namespace UserInterfaceLayer
     {
         public Login()
         {
+            Thread Wait = new Thread(new ThreadStart(Presentacion));
+            Wait.Start();
+            Thread.Sleep(8000);
             InitializeComponent();
+            Wait.Abort();
         }
-
+        public void Presentacion() { Application.Run(new Splash()); }
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

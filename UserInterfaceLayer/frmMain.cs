@@ -81,19 +81,20 @@ namespace UserInterfaceLayer
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            Formhijo(new frmMaestros());
-                        
 
-                bunifuFlatButton1.Enabled = false;
-            bunifuFlatButton2.Enabled = true;
-            lblFormActual.Text = "MAESTROS";
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            Formhijo(new Form4());
+            var Form4 = new Form4(this);
+            Formhijo(Form4);
+
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = false;
+            bunifuFlatButton3.Enabled = true;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "OTRA COSA";
             lblFormActual.Visible = true;
         }
@@ -101,11 +102,49 @@ namespace UserInterfaceLayer
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
             Formhijo(new Form());
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = false;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
             lblFormActual.Visible = false;
+
+            Sidebar.Visible = false;
+            Sidebar.Width = 202;
+            SidebarWrapper.Width = 226;
+            Separador.Width = 252;
+            AnimacionSider2.Show(Sidebar);
+            label1.Text = "OCULTAR MENÚ";
+        }
+
+        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        {
+            var frmMaestro = new frmMaestros(this);
+            Formhijo(frmMaestro);
+
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = true;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = false;
+            lblFormActual.Text = "MAESTROS";
+            lblFormActual.Visible = true;
+        }
+        public void EnableButtons()
+        {
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = true;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
+            lblFormActual.Text = "";
         }
     }
 }

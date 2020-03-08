@@ -15,13 +15,17 @@ namespace UserInterfaceLayer
         public Splash()
         {
             InitializeComponent();
-           /*this.TransparencyKey = (BackColor);*/
+           this.TransparencyKey = (BackColor);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.progressBar1.Increment(3);
             if (progressBar1.Value == 100) this.timer1.Stop();
+            if (progressBar1.Value == 50) this.Close();
+
+
+
         }
     }
 }
