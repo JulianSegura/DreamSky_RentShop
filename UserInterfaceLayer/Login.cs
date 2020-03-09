@@ -17,7 +17,7 @@ namespace UserInterfaceLayer
         {
             Thread Wait = new Thread(new ThreadStart(Presentacion));
             Wait.Start();
-            Thread.Sleep(8000);
+            Thread.Sleep(3000);
             InitializeComponent();
             Wait.Abort();
         }
