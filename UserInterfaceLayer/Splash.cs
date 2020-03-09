@@ -22,7 +22,7 @@ namespace UserInterfaceLayer
         {
             this.progressBar1.Increment(3);
             if (progressBar1.Value == 100) this.timer1.Stop();
-            if (progressBar1.Value == 50) this.Close();
+            if (progressBar1.Value == 20) this.Close();
 
 
 
