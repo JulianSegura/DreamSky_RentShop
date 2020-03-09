@@ -10,27 +10,27 @@ using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
-    public partial class frmMaestros : Form
+    public partial class frmProductos : Form
     {
         private frmMain _mainForm;
 
-        public frmMaestros()
+        public frmProductos()
         {
             InitializeComponent();
         }
-        public frmMaestros(frmMain mainForm)
+        public frmProductos(frmMain mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
         }
-        private void button1_Click(object sender, EventArgs e)
+
+        private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
-                        
         }
-        private void frmMaestros_FormClosing(object sender, FormClosingEventArgs e)
+
+        private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)
         {
-             
             _mainForm.EnableButtons();
         }
     }

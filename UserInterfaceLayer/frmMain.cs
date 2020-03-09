@@ -81,13 +81,22 @@ namespace UserInterfaceLayer
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-
+            var frmRentas = new frmRentas(this);
+            Formhijo(frmRentas);
+            bunifuFlatButton1.Enabled = false;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = true;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
+            lblFormActual.Text = "RENTAS";
+            lblFormActual.Visible = true;
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
         {
-            var Form4 = new Form4(this);
-            Formhijo(Form4);
+            var frmClientes = new frmClientes(this);
+            Formhijo(frmClientes);
 
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = false;
@@ -95,19 +104,22 @@ namespace UserInterfaceLayer
             bunifuFlatButton4.Enabled = true;
             bunifuFlatButton5.Enabled = true;
             bunifuFlatButton6.Enabled = true;
-            lblFormActual.Text = "OTRA COSA";
+            lblFormActual.Text = "CLIENTES";
             lblFormActual.Visible = true;
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
         {
-            Formhijo(new Form());
+            var frmProductos = new frmProductos(this);
+            Formhijo(frmProductos);
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = true;
             bunifuFlatButton3.Enabled = false;
             bunifuFlatButton4.Enabled = true;
             bunifuFlatButton5.Enabled = true;
             bunifuFlatButton6.Enabled = true;
+            lblFormActual.Text = "PRODUCTOS";
+            lblFormActual.Visible = true;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -145,6 +157,39 @@ namespace UserInterfaceLayer
             bunifuFlatButton5.Enabled = true;
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "";
+        }
+
+        public static implicit operator frmMain(frmProductos v)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        {
+            var frmReportes = new frmReportes(this);
+            Formhijo(frmReportes);
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = false;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
+            lblFormActual.Text = "REPORTES";
+            lblFormActual.Visible = true;
+        }
+
+        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        {
+            var frmPerfil = new frmPerfil(this);
+            Formhijo(frmPerfil);
+            bunifuFlatButton1.Enabled = true;
+            bunifuFlatButton2.Enabled = true;
+            bunifuFlatButton3.Enabled = false;
+            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton6.Enabled = true;
+            lblFormActual.Text = "PERFIL";
+            lblFormActual.Visible = true;
         }
     }
 }
