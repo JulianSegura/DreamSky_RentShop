@@ -12,15 +12,28 @@ namespace UserInterfaceLayer
 {
     public partial class Form4 : Form
     {
+        private frmMain _mainForm;
+
         public Form4()
         {
             InitializeComponent();
-        }
 
+        }
+        public Form4(frmMain mainForm)
+        {
+            InitializeComponent();
+            _mainForm = mainForm;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-  
         }
-    }
+
+        private void Form4_FormClosing(object sender, FormClosingEventArgs e)
+        {
+           
+            _mainForm.EnableButtons();
+        }
+    } 
 }
+
