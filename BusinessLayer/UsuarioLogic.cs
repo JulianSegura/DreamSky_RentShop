@@ -96,9 +96,6 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Usuario", userName));
                 parameters.Add(new DataParameter("@Password", EncodeText(password)));
                 
-                //parametros de salida
-                parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
-
                 dt= dataManager.ExecuteQuery("uspGetUserByUserName", parameters);
                 
             }

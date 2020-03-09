@@ -4,6 +4,7 @@ using System.Text;
 using DataAccessLayer;
 using DreamSkyEntities;
 using System.Data;
+using System.Linq;
 
 namespace BusinessLayer
 {
@@ -11,7 +12,7 @@ namespace BusinessLayer
     {
         DatabaseManager dataManager = new DatabaseManager();
 
-        public string Insert()
+        public string Insert(clsCategoriaProducto categoriaProducto)
         {
             string result = "";
             List<DataParameter> parameters = new List<DataParameter>();
@@ -20,8 +21,8 @@ namespace BusinessLayer
             {
                 //Parametros de entrada
 
-                parameters.Add(new DataParameter("@Nombre", this.Nombre));
-                parameters.Add(new DataParameter("@Activo", this.Activo));
+                parameters.Add(new DataParameter("@Nombre", categoriaProducto.Nombre));
+                parameters.Add(new DataParameter("@Activo", categoriaProducto.Activo));
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
@@ -37,7 +38,7 @@ namespace BusinessLayer
             return result;
         }
 
-        public string Update()
+        public string Update(clsCategoriaProducto categoriaProducto)
         {
             string result = "";
 
@@ -46,14 +47,14 @@ namespace BusinessLayer
             try
             {
                 //Parametros de entrada
-
-                parameters.Add(new DataParameter("@Nombre", this.Nombre));
-                parameters.Add(new DataParameter("@Activo", this.Activo));
+                parameters.Add(new DataParameter("@Id", categoriaProducto.Id));
+                parameters.Add(new DataParameter("@Nombre", categoriaProducto.Nombre));
+                parameters.Add(new DataParameter("@Activo", categoriaProducto.Activo));
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspUpdateProductCategory", parameters);
-                result = parameters[2].Value.ToString();
+                result = parameters[3].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -62,9 +63,20 @@ namespace BusinessLayer
 
             return result;
         }
-        public DataTable GetAll()
+        public List<clsCategoriaProducto> GetAll()
         {
-            return dataManager.ExecuteQuery("uspGetAllProductCategories", null);
+            List<clsCategoriaProducto> list = new List<clsCategoriaProducto>();
+            DataTable dt= dataManager.ExecuteQuery("uspGetAllProductCategories", null);
+
+            list = (from DataRow row in dt.Rows
+                    select new clsCategoriaProducto()
+                    {
+                        Id=Convert.ToInt32(row["Id"]),
+                        Nombre=row["Nombre"].ToString(),
+                        Activo=Convert.ToBoolean(row["Activo"])
+                    }).ToList();
+
+            return list;
         }
 
     }

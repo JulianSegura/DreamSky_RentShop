@@ -13,17 +13,5 @@ namespace DreamSkyEntities
         public bool Activo { get; set; }
         public List<clsPermiso> Permisos { get; set; }
 
-        public clsRol(int rolId)
-        {
-            Id = rolId;
-
-        }
-
-        public clsRol()
-        {
-
-        }
-
-        private void get
     }
 }
