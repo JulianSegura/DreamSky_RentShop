@@ -75,9 +75,22 @@ namespace BusinessLayer
             return result;
         }
         
-        public DataTable GetAll()
+        public List<clsUsuario> GetAll()
         {
-            return dataManager.ExecuteQuery("uspGetAllUsers", null);
+            List<clsUsuario> lst = new List<clsUsuario>();
+            DataTable dt=dataManager.ExecuteQuery("uspGetAllUsers", null);
+
+            lst = (from DataRow row in dt.Rows
+                   select new clsUsuario
+                   {
+                       Id = Convert.ToInt32(row["Id"]),
+                       Nombres = row["Nombres"].ToString(),
+                       Apellidos=row["Apellidos"].ToString(),
+                       Rol=new clsRol { Id= Convert.ToInt32(row["IdRol"])},
+                       fechaCreacion=Convert.ToDateTime(row["FechaCreacion"]),
+                       Activo=Convert.ToBoolean(row["Activo"])
+                   }).ToList();
+            return lst;
         }
 
         public clsUsuario Validate(string userName,string password)

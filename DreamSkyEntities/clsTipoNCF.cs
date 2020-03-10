@@ -4,9 +4,9 @@ using System.Text;
 
 namespace DreamSkyEntities
 {
-    public class clsTipoRNC
+    public class clsTipoNCF
     {
-        public int Id { get;}
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public bool Activo { get; set; }
     }

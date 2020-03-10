@@ -8,7 +8,7 @@ using System.Linq;
 
 namespace BusinessLayer
 {
-    public class CategoriaProductoLogic: clsCategoriaProducto
+    public class CategoriaProductoLogic
     {
         DatabaseManager dataManager = new DatabaseManager();
 
