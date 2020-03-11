@@ -11,29 +11,30 @@ namespace BusinessLayer
     public class RolLogic
     {
         DatabaseManager dataManager = new DatabaseManager();
-        public string Insert(clsTipoNCF newTipoNCF)
-        {
+        public string Insert(clsRol newRol)
+        { 
             string result;
             List<DataParameter> parameters = new List<DataParameter>();
 
             try
             {
-                parameters.Add(new DataParameter("@Nombre", newTipoNCF.Nombre));
-                parameters.Add(new DataParameter("@Activo", newTipoNCF.Activo));
+                parameters.Add(new DataParameter("@Nombre", newRol.Nombre));
+                parameters.Add(new DataParameter("@Activo", newRol.Activo));
+                parameters.Add(new DataParameter("@LimiteEmpleados", newRol.limiteEmpleados));
+                parameters.Add(new DataParameter("@LimiteEnDemanda", newRol.limiteEnDemanda));
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
-                dataManager.ExecuteStoreProc("uspInsertTipoNCF", parameters);
-                result = parameters[2].Value.ToString();
+                dataManager.ExecuteStoreProc("uspInsertRol", parameters);
+                result = parameters[4].Value.ToString();
             }
             catch (Exception ex)
             {
-
                 result = ex.Message;
             }
             return result;
         }
 
-        public string Update(clsTipoNCF updateNCF)
+        public string Update(clsRol updateRol)
         {
             string result;
 
@@ -41,15 +42,17 @@ namespace BusinessLayer
 
             try
             {
-                //Parametros de entrada
-                parameters.Add(new DataParameter("@Id", updateNCF.Id));
-                parameters.Add(new DataParameter("@Nombre", updateNCF.Nombre));
-                parameters.Add(new DataParameter("@Activo", updateNCF.Activo));
-                //parametros de salida
+
+                parameters.Add(new DataParameter("@Id", updateRol.Id));
+                parameters.Add(new DataParameter("@Nombre", updateRol.Nombre));
+                parameters.Add(new DataParameter("@Activo", updateRol.Activo));
+                parameters.Add(new DataParameter("@LimiteEmpleados", updateRol.limiteEmpleados));
+                parameters.Add(new DataParameter("@LimiteEnDemanda", updateRol.limiteEnDemanda));
+
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
-                dataManager.ExecuteStoreProc("uspUpdateTipoNCF", parameters);
-                result = parameters[3].Value.ToString();
+                dataManager.ExecuteStoreProc("uspUpdateRol", parameters);
+                result = parameters[5].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -65,7 +68,10 @@ namespace BusinessLayer
 
             lst = (from DataRow row in dt.Rows
                    select new clsRol
-                   { Id = Convert.ToInt32(row["Id"]), Nombre = row["Nombre"].ToString(), limiteEmpleados=Convert.ToInt32(row["LimiteEmpleados"]),limiteEnDemanda= Convert.ToInt32(row["LimiteEnDemanda"]), Activo = Convert.ToBoolean(row["Activo"]) }
+                   { Id = Convert.ToInt32(row["Id"]), Nombre = row["Nombre"].ToString(), 
+                     limiteEmpleados=Convert.ToInt32(row["LimiteEmpleados"]),
+                     limiteEnDemanda= Convert.ToInt32(row["LimiteEnDemanda"]),
+                     Activo = Convert.ToBoolean(row["Activo"])}
                    ).ToList();
 
             return lst;
