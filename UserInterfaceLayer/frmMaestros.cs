@@ -390,5 +390,21 @@ namespace UserInterfaceLayer
             return false;
         }
         #endregion
+
+        #region Codigo_Para: Tab_Roles_y_Permisos
+        
+        private void dtgRoles_MouseHover(object sender, EventArgs e)
+        {
+            ToolTip usuarioToolTip = new ToolTip();
+            usuarioToolTip.SetToolTip(dtgRoles, "Haga doble click sobre un elemento para MODIFICAR");
+        }
+
+        private void tabRoles_Enter(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
+
+
     }
 }

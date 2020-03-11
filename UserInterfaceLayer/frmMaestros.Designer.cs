@@ -69,11 +69,11 @@
             this.tabRoles = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.chkRol = new System.Windows.Forms.CheckBox();
+            this.btnActualizaRol = new System.Windows.Forms.Button();
+            this.btnGuardaRol = new System.Windows.Forms.Button();
+            this.txtNombreRol = new System.Windows.Forms.TextBox();
+            this.dtgRoles = new System.Windows.Forms.DataGridView();
             this.tabUsuarios = new System.Windows.Forms.TabPage();
             this.btnLimpiaUsuario = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
@@ -96,7 +96,9 @@
             this.RolUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCreacionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivoUsuario = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLimpiaRol = new System.Windows.Forms.Button();
+            this.dtgPermisos = new System.Windows.Forms.DataGridView();
+            this.label15 = new System.Windows.Forms.Label();
             this.tabControlMaestros.SuspendLayout();
             this.tabCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategoriaProducto)).BeginInit();
@@ -105,9 +107,10 @@
             this.tabNCF.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgNCF)).BeginInit();
             this.tabRoles.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRoles)).BeginInit();
             this.tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -118,7 +121,7 @@
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(122, 28);
-            this.btnCerrar.TabIndex = 6;
+            this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -623,19 +626,22 @@
             // tabRoles
             // 
             this.tabRoles.BackColor = System.Drawing.Color.PaleGreen;
-            this.tabRoles.Controls.Add(this.textBox4);
-            this.tabRoles.Controls.Add(this.button1);
+            this.tabRoles.Controls.Add(this.label15);
+            this.tabRoles.Controls.Add(this.dtgPermisos);
+            this.tabRoles.Controls.Add(this.txtNombreRol);
+            this.tabRoles.Controls.Add(this.btnLimpiaRol);
             this.tabRoles.Controls.Add(this.label7);
             this.tabRoles.Controls.Add(this.label8);
-            this.tabRoles.Controls.Add(this.checkBox4);
-            this.tabRoles.Controls.Add(this.button8);
-            this.tabRoles.Controls.Add(this.button9);
-            this.tabRoles.Controls.Add(this.dataGridView4);
+            this.tabRoles.Controls.Add(this.chkRol);
+            this.tabRoles.Controls.Add(this.btnActualizaRol);
+            this.tabRoles.Controls.Add(this.btnGuardaRol);
+            this.tabRoles.Controls.Add(this.dtgRoles);
             this.tabRoles.Location = new System.Drawing.Point(4, 31);
             this.tabRoles.Name = "tabRoles";
             this.tabRoles.Size = new System.Drawing.Size(574, 374);
             this.tabRoles.TabIndex = 4;
             this.tabRoles.Text = "Roles y Permisos";
+            this.tabRoles.Enter += new System.EventHandler(this.tabRoles_Enter);
             // 
             // label7
             // 
@@ -644,9 +650,9 @@
             this.label7.Location = new System.Drawing.Point(9, 35);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(69, 19);
+            this.label7.Size = new System.Drawing.Size(36, 19);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Permiso:";
+            this.label7.Text = "Rol:";
             // 
             // label8
             // 
@@ -660,68 +666,68 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Administrar roles y permisos";
             // 
-            // checkBox4
+            // chkRol
             // 
-            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.ForeColor = System.Drawing.Color.Black;
-            this.checkBox4.Location = new System.Drawing.Point(199, 33);
-            this.checkBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(71, 23);
-            this.checkBox4.TabIndex = 18;
-            this.checkBox4.Text = "Activo";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chkRol.AutoSize = true;
+            this.chkRol.ForeColor = System.Drawing.Color.Black;
+            this.chkRol.Location = new System.Drawing.Point(199, 33);
+            this.chkRol.Margin = new System.Windows.Forms.Padding(2);
+            this.chkRol.Name = "chkRol";
+            this.chkRol.Size = new System.Drawing.Size(71, 23);
+            this.chkRol.TabIndex = 1;
+            this.chkRol.Text = "Activo";
+            this.chkRol.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnActualizaRol
             // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(378, 29);
-            this.button8.Margin = new System.Windows.Forms.Padding(2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(94, 26);
-            this.button8.TabIndex = 20;
-            this.button8.Text = "Actualizar";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnActualizaRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActualizaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizaRol.ForeColor = System.Drawing.Color.Black;
+            this.btnActualizaRol.Location = new System.Drawing.Point(363, 29);
+            this.btnActualizaRol.Margin = new System.Windows.Forms.Padding(2);
+            this.btnActualizaRol.Name = "btnActualizaRol";
+            this.btnActualizaRol.Size = new System.Drawing.Size(94, 26);
+            this.btnActualizaRol.TabIndex = 3;
+            this.btnActualizaRol.Text = "Actualizar";
+            this.btnActualizaRol.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnGuardaRol
             // 
-            this.button9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.ForeColor = System.Drawing.Color.Black;
-            this.button9.Location = new System.Drawing.Point(289, 29);
-            this.button9.Margin = new System.Windows.Forms.Padding(2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(85, 26);
-            this.button9.TabIndex = 19;
-            this.button9.Text = "Guardar";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnGuardaRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardaRol.ForeColor = System.Drawing.Color.Black;
+            this.btnGuardaRol.Location = new System.Drawing.Point(274, 29);
+            this.btnGuardaRol.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardaRol.Name = "btnGuardaRol";
+            this.btnGuardaRol.Size = new System.Drawing.Size(85, 26);
+            this.btnGuardaRol.TabIndex = 2;
+            this.btnGuardaRol.Text = "Guardar";
+            this.btnGuardaRol.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtNombreRol
             // 
-            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtNombreRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox4.Location = new System.Drawing.Point(76, 32);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(116, 23);
-            this.textBox4.TabIndex = 17;
+            this.txtNombreRol.Location = new System.Drawing.Point(43, 32);
+            this.txtNombreRol.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreRol.Name = "txtNombreRol";
+            this.txtNombreRol.Size = new System.Drawing.Size(149, 23);
+            this.txtNombreRol.TabIndex = 0;
             // 
-            // dataGridView4
+            // dtgRoles
             // 
-            this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.dtgRoles.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(4, 63);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(569, 92);
-            this.dataGridView4.TabIndex = 16;
+            this.dtgRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgRoles.Location = new System.Drawing.Point(4, 63);
+            this.dtgRoles.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgRoles.Name = "dtgRoles";
+            this.dtgRoles.RowHeadersWidth = 51;
+            this.dtgRoles.RowTemplate.Height = 24;
+            this.dtgRoles.Size = new System.Drawing.Size(569, 126);
+            this.dtgRoles.TabIndex = 5;
+            this.dtgRoles.MouseHover += new System.EventHandler(this.dtgRoles_MouseHover);
             // 
             // tabUsuarios
             // 
@@ -993,18 +999,44 @@
             this.ActivoUsuario.Name = "ActivoUsuario";
             this.ActivoUsuario.ReadOnly = true;
             // 
-            // button1
+            // btnLimpiaRol
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(476, 28);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(85, 27);
-            this.button1.TabIndex = 32;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLimpiaRol.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiaRol.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiaRol.Location = new System.Drawing.Point(363, 29);
+            this.btnLimpiaRol.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiaRol.Name = "btnLimpiaRol";
+            this.btnLimpiaRol.Size = new System.Drawing.Size(85, 26);
+            this.btnLimpiaRol.TabIndex = 4;
+            this.btnLimpiaRol.Text = "Nuevo";
+            this.btnLimpiaRol.UseVisualStyleBackColor = true;
+            // 
+            // dtgPermisos
+            // 
+            this.dtgPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPermisos.Location = new System.Drawing.Point(5, 214);
+            this.dtgPermisos.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgPermisos.Name = "dtgPermisos";
+            this.dtgPermisos.RowHeadersWidth = 51;
+            this.dtgPermisos.RowTemplate.Height = 24;
+            this.dtgPermisos.Size = new System.Drawing.Size(569, 158);
+            this.dtgPermisos.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Bookman Old Style", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(1, 191);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(95, 21);
+            this.label15.TabIndex = 34;
+            this.label15.Text = "Permisos";
             // 
             // frmMaestros
             // 
@@ -1031,10 +1063,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgNCF)).EndInit();
             this.tabRoles.ResumeLayout(false);
             this.tabRoles.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgRoles)).EndInit();
             this.tabUsuarios.ResumeLayout(false);
             this.tabUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1070,11 +1103,11 @@
         private System.Windows.Forms.TextBox txtCategoriaProducto;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.CheckBox chkRol;
+        private System.Windows.Forms.Button btnActualizaRol;
+        private System.Windows.Forms.Button btnGuardaRol;
+        private System.Windows.Forms.TextBox txtNombreRol;
+        private System.Windows.Forms.DataGridView dtgRoles;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.CheckBox chkUsuario;
@@ -1109,6 +1142,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RolUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacionUsuario;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ActivoUsuario;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLimpiaRol;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dtgPermisos;
     }
 }
