@@ -16,6 +16,8 @@ namespace UserInterfaceLayer
         public Login()
         {
             Thread Wait = new Thread(new ThreadStart(Presentacion));
+            frmMain frm = new frmMain();
+            frm.Show();
             Wait.Start();
             Thread.Sleep(3000);
             InitializeComponent();
@@ -73,7 +75,7 @@ namespace UserInterfaceLayer
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+            this.Hide();
         }
     }
 }

@@ -240,5 +240,23 @@
   <ItemGroup>
     <None Include="Resources\Desing 2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basic_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\my-account.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\administrative-docs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

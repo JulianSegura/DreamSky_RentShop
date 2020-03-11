@@ -49,6 +49,7 @@ namespace UserInterfaceLayer
                 Sidebar.Width = 45;
                 SidebarWrapper.Width = 70;
                 Separador.Width = 35;
+                bunifuFlatButton7.Width = 45;
                 AnimacionSider1.Show(Sidebar);
                 label1.Text = "MENÚ";
             }
@@ -58,6 +59,7 @@ namespace UserInterfaceLayer
                 Sidebar.Width = 202;
                 SidebarWrapper.Width = 226;
                 Separador.Width = 252;
+                bunifuFlatButton7.Width = 202;
                 AnimacionSider2.Show(Sidebar);
                 label1.Text = "OCULTAR MENÚ";
             }
@@ -170,8 +172,8 @@ namespace UserInterfaceLayer
             Formhijo(frmReportes);
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = false;
-            bunifuFlatButton4.Enabled = true;
+            bunifuFlatButton3.Enabled = true;
+            bunifuFlatButton4.Enabled = false;
             bunifuFlatButton5.Enabled = true;
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "REPORTES";
@@ -184,12 +186,17 @@ namespace UserInterfaceLayer
             Formhijo(frmPerfil);
             bunifuFlatButton1.Enabled = true;
             bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = false;
+            bunifuFlatButton3.Enabled = true;
             bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
+            bunifuFlatButton5.Enabled = false;
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "PERFIL";
             lblFormActual.Visible = true;
+        }
+
+        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }
