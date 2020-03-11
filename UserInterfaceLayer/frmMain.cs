@@ -93,6 +93,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "RENTAS";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "RENTAS") bunifuFlatButton1.DisabledColor = Color.DarkSlateGray;
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -108,6 +109,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "CLIENTES";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "CLIENTES") bunifuFlatButton2.DisabledColor = Color.DarkSlateGray;
         }
 
         private void bunifuFlatButton3_Click(object sender, EventArgs e)
@@ -122,6 +124,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "PRODUCTOS";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "PRODUCTOS") bunifuFlatButton3.DisabledColor = Color.DarkSlateGray;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -149,6 +152,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = false;
             lblFormActual.Text = "MAESTROS";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "MAESTROS") bunifuFlatButton6.DisabledColor = Color.DarkSlateGray;
         }
         public void EnableButtons()
         {
@@ -178,6 +182,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "REPORTES";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "REPORTES") bunifuFlatButton4.DisabledColor = Color.DarkSlateGray;
         }
 
         private void bunifuFlatButton5_Click(object sender, EventArgs e)
@@ -192,6 +197,7 @@ namespace UserInterfaceLayer
             bunifuFlatButton6.Enabled = true;
             lblFormActual.Text = "PERFIL";
             lblFormActual.Visible = true;
+            if (lblFormActual.Text == "PERFIL") bunifuFlatButton5.DisabledColor = Color.DarkSlateGray;
         }
 
         private void bunifuFlatButton7_Click(object sender, EventArgs e)
