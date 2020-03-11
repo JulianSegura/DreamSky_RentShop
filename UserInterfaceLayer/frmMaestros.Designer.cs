@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tabControlMaestros = new System.Windows.Forms.TabControl();
             this.tabCategoria = new System.Windows.Forms.TabPage();
@@ -52,7 +51,11 @@
             this.btnGuardarIndentificacion = new System.Windows.Forms.Button();
             this.txtTipoIdentificacion = new System.Windows.Forms.TextBox();
             this.dtgTipoIdentificacion = new System.Windows.Forms.DataGridView();
+            this.IdIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivoIdentificacion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabNCF = new System.Windows.Forms.TabPage();
+            this.btnLimpiarNCF = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.chkNCF = new System.Windows.Forms.CheckBox();
@@ -60,6 +63,9 @@
             this.btnGuardaNCF = new System.Windows.Forms.Button();
             this.txtNCF = new System.Windows.Forms.TextBox();
             this.dtgNCF = new System.Windows.Forms.DataGridView();
+            this.IdNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ActivoNCF = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabRoles = new System.Windows.Forms.TabPage();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -69,13 +75,14 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabUsuarios = new System.Windows.Forms.TabPage();
+            this.btnLimpiaUsuario = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.cmbUserRol = new System.Windows.Forms.ComboBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textApellidoUsuario = new System.Windows.Forms.TextBox();
+            this.txtApellidosUsuario = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -84,19 +91,12 @@
             this.btnGuardaUsuario = new System.Windows.Forms.Button();
             this.txtNombresUsuario = new System.Windows.Forms.TextBox();
             this.dtgUsuario = new System.Windows.Forms.DataGridView();
-            this.IdIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreIdentificacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActivoIdentificacion = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnLimpiarNCF = new System.Windows.Forms.Button();
-            this.IdNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ActivoNCF = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.btnLimpiaUsuario = new System.Windows.Forms.Button();
             this.IdUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RolUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCreacionUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivoUsuario = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControlMaestros.SuspendLayout();
             this.tabCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCategoriaProducto)).BeginInit();
@@ -136,7 +136,7 @@
             this.tabControlMaestros.Controls.Add(this.tabUsuarios);
             this.tabControlMaestros.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMaestros.Location = new System.Drawing.Point(7, 11);
-            this.tabControlMaestros.Margin = new System.Windows.Forms.Padding(2);
+            this.tabControlMaestros.Margin = new System.Windows.Forms.Padding(0);
             this.tabControlMaestros.Name = "tabControlMaestros";
             this.tabControlMaestros.SelectedIndex = 0;
             this.tabControlMaestros.Size = new System.Drawing.Size(582, 409);
@@ -430,14 +430,6 @@
             this.IdIdentificacion,
             this.NombreIdentificacion,
             this.ActivoIdentificacion});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Bookman Old Style", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgTipoIdentificacion.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtgTipoIdentificacion.Location = new System.Drawing.Point(4, 63);
             this.dtgTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgTipoIdentificacion.Name = "dtgTipoIdentificacion";
@@ -451,6 +443,29 @@
             this.dtgTipoIdentificacion.TabIndex = 11;
             this.dtgTipoIdentificacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTipoIdentifiacion_CellDoubleClick);
             this.dtgTipoIdentificacion.MouseHover += new System.EventHandler(this.dtgTipoIdentifiacion_MouseHover);
+            // 
+            // IdIdentificacion
+            // 
+            this.IdIdentificacion.HeaderText = "Id";
+            this.IdIdentificacion.Name = "IdIdentificacion";
+            this.IdIdentificacion.ReadOnly = true;
+            this.IdIdentificacion.Visible = false;
+            // 
+            // NombreIdentificacion
+            // 
+            this.NombreIdentificacion.FillWeight = 149.2386F;
+            this.NombreIdentificacion.HeaderText = "Tipo Identificacion";
+            this.NombreIdentificacion.Name = "NombreIdentificacion";
+            this.NombreIdentificacion.ReadOnly = true;
+            // 
+            // ActivoIdentificacion
+            // 
+            this.ActivoIdentificacion.FillWeight = 50.76142F;
+            this.ActivoIdentificacion.HeaderText = "Activo";
+            this.ActivoIdentificacion.Name = "ActivoIdentificacion";
+            this.ActivoIdentificacion.ReadOnly = true;
+            this.ActivoIdentificacion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ActivoIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // tabNCF
             // 
@@ -469,6 +484,20 @@
             this.tabNCF.TabIndex = 3;
             this.tabNCF.Text = "Tipo NCF";
             this.tabNCF.Enter += new System.EventHandler(this.tabNCF_Enter);
+            // 
+            // btnLimpiarNCF
+            // 
+            this.btnLimpiarNCF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiarNCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiarNCF.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiarNCF.Location = new System.Drawing.Point(377, 29);
+            this.btnLimpiarNCF.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiarNCF.Name = "btnLimpiarNCF";
+            this.btnLimpiarNCF.Size = new System.Drawing.Size(85, 28);
+            this.btnLimpiarNCF.TabIndex = 25;
+            this.btnLimpiarNCF.Text = "Nuevo";
+            this.btnLimpiarNCF.UseVisualStyleBackColor = true;
+            this.btnLimpiarNCF.Click += new System.EventHandler(this.btnLimpiarNCF_Click);
             // 
             // label5
             // 
@@ -570,15 +599,37 @@
             this.dtgNCF.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgNCF_CellDoubleClick);
             this.dtgNCF.MouseHover += new System.EventHandler(this.dtgNCF_MouseHover);
             // 
+            // IdNCF
+            // 
+            this.IdNCF.HeaderText = "Id";
+            this.IdNCF.Name = "IdNCF";
+            this.IdNCF.ReadOnly = true;
+            this.IdNCF.Visible = false;
+            // 
+            // NombreNCF
+            // 
+            this.NombreNCF.FillWeight = 149.2386F;
+            this.NombreNCF.HeaderText = "Tipo NCF";
+            this.NombreNCF.Name = "NombreNCF";
+            this.NombreNCF.ReadOnly = true;
+            // 
+            // ActivoNCF
+            // 
+            this.ActivoNCF.FillWeight = 50.76142F;
+            this.ActivoNCF.HeaderText = "Activo";
+            this.ActivoNCF.Name = "ActivoNCF";
+            this.ActivoNCF.ReadOnly = true;
+            // 
             // tabRoles
             // 
             this.tabRoles.BackColor = System.Drawing.Color.PaleGreen;
+            this.tabRoles.Controls.Add(this.textBox4);
+            this.tabRoles.Controls.Add(this.button1);
             this.tabRoles.Controls.Add(this.label7);
             this.tabRoles.Controls.Add(this.label8);
             this.tabRoles.Controls.Add(this.checkBox4);
             this.tabRoles.Controls.Add(this.button8);
             this.tabRoles.Controls.Add(this.button9);
-            this.tabRoles.Controls.Add(this.textBox4);
             this.tabRoles.Controls.Add(this.dataGridView4);
             this.tabRoles.Location = new System.Drawing.Point(4, 31);
             this.tabRoles.Name = "tabRoles";
@@ -590,12 +641,12 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(10, 33);
+            this.label7.Location = new System.Drawing.Point(9, 35);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 19);
+            this.label7.Size = new System.Drawing.Size(69, 19);
             this.label7.TabIndex = 22;
-            this.label7.Text = "Nombre:";
+            this.label7.Text = "Permiso:";
             // 
             // label8
             // 
@@ -627,10 +678,10 @@
             this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.ForeColor = System.Drawing.Color.Black;
-            this.button8.Location = new System.Drawing.Point(377, 29);
+            this.button8.Location = new System.Drawing.Point(378, 29);
             this.button8.Margin = new System.Windows.Forms.Padding(2);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(94, 28);
+            this.button8.Size = new System.Drawing.Size(94, 26);
             this.button8.TabIndex = 20;
             this.button8.Text = "Actualizar";
             this.button8.UseVisualStyleBackColor = true;
@@ -643,7 +694,7 @@
             this.button9.Location = new System.Drawing.Point(289, 29);
             this.button9.Margin = new System.Windows.Forms.Padding(2);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(85, 28);
+            this.button9.Size = new System.Drawing.Size(85, 26);
             this.button9.TabIndex = 19;
             this.button9.Text = "Guardar";
             this.button9.UseVisualStyleBackColor = true;
@@ -669,7 +720,7 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.Size = new System.Drawing.Size(569, 313);
+            this.dataGridView4.Size = new System.Drawing.Size(569, 92);
             this.dataGridView4.TabIndex = 16;
             // 
             // tabUsuarios
@@ -682,7 +733,7 @@
             this.tabUsuarios.Controls.Add(this.label13);
             this.tabUsuarios.Controls.Add(this.txtUsuario);
             this.tabUsuarios.Controls.Add(this.label12);
-            this.tabUsuarios.Controls.Add(this.textApellidoUsuario);
+            this.tabUsuarios.Controls.Add(this.txtApellidosUsuario);
             this.tabUsuarios.Controls.Add(this.label11);
             this.tabUsuarios.Controls.Add(this.label9);
             this.tabUsuarios.Controls.Add(this.label10);
@@ -698,6 +749,21 @@
             this.tabUsuarios.Size = new System.Drawing.Size(574, 374);
             this.tabUsuarios.TabIndex = 5;
             this.tabUsuarios.Text = "Administrar Usuarios";
+            this.tabUsuarios.Enter += new System.EventHandler(this.tabUsuarios_Enter);
+            // 
+            // btnLimpiaUsuario
+            // 
+            this.btnLimpiaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLimpiaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiaUsuario.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiaUsuario.Location = new System.Drawing.Point(341, 139);
+            this.btnLimpiaUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiaUsuario.Name = "btnLimpiaUsuario";
+            this.btnLimpiaUsuario.Size = new System.Drawing.Size(85, 28);
+            this.btnLimpiaUsuario.TabIndex = 31;
+            this.btnLimpiaUsuario.Text = "Nuevo";
+            this.btnLimpiaUsuario.UseVisualStyleBackColor = true;
+            this.btnLimpiaUsuario.Click += new System.EventHandler(this.btnLimpiaUsuario_Click);
             // 
             // label14
             // 
@@ -763,15 +829,15 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Usuario:";
             // 
-            // textApellidoUsuario
+            // txtApellidosUsuario
             // 
-            this.textApellidoUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtApellidosUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textApellidoUsuario.Location = new System.Drawing.Point(102, 59);
-            this.textApellidoUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.textApellidoUsuario.Name = "textApellidoUsuario";
-            this.textApellidoUsuario.Size = new System.Drawing.Size(130, 23);
-            this.textApellidoUsuario.TabIndex = 22;
+            this.txtApellidosUsuario.Location = new System.Drawing.Point(102, 59);
+            this.txtApellidosUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellidosUsuario.Name = "txtApellidosUsuario";
+            this.txtApellidosUsuario.Size = new System.Drawing.Size(130, 23);
+            this.txtApellidosUsuario.TabIndex = 22;
             // 
             // label11
             // 
@@ -825,14 +891,15 @@
             this.btnActualizaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizaUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnActualizaUsuario.Location = new System.Drawing.Point(243, 109);
+            this.btnActualizaUsuario.Location = new System.Drawing.Point(243, 110);
             this.btnActualizaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizaUsuario.Name = "btnActualizaUsuario";
-            this.btnActualizaUsuario.Size = new System.Drawing.Size(85, 28);
+            this.btnActualizaUsuario.Size = new System.Drawing.Size(94, 29);
             this.btnActualizaUsuario.TabIndex = 28;
             this.btnActualizaUsuario.Text = "Actualizar";
             this.btnActualizaUsuario.UseVisualStyleBackColor = true;
             this.btnActualizaUsuario.Visible = false;
+            this.btnActualizaUsuario.Click += new System.EventHandler(this.btnActualizaUsuario_Click);
             // 
             // btnGuardaUsuario
             // 
@@ -842,10 +909,11 @@
             this.btnGuardaUsuario.Location = new System.Drawing.Point(243, 140);
             this.btnGuardaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardaUsuario.Name = "btnGuardaUsuario";
-            this.btnGuardaUsuario.Size = new System.Drawing.Size(85, 28);
+            this.btnGuardaUsuario.Size = new System.Drawing.Size(94, 27);
             this.btnGuardaUsuario.TabIndex = 27;
             this.btnGuardaUsuario.Text = "Guardar";
             this.btnGuardaUsuario.UseVisualStyleBackColor = true;
+            this.btnGuardaUsuario.Click += new System.EventHandler(this.btnGuardaUsuario_Click);
             // 
             // txtNombresUsuario
             // 
@@ -887,78 +955,8 @@
             this.dtgUsuario.ShowEditingIcon = false;
             this.dtgUsuario.Size = new System.Drawing.Size(569, 189);
             this.dtgUsuario.TabIndex = 29;
+            this.dtgUsuario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgUsuario_CellDoubleClick);
             this.dtgUsuario.MouseHover += new System.EventHandler(this.dtgUsuario_MouseHover);
-            // 
-            // IdIdentificacion
-            // 
-            this.IdIdentificacion.HeaderText = "Id";
-            this.IdIdentificacion.Name = "IdIdentificacion";
-            this.IdIdentificacion.ReadOnly = true;
-            this.IdIdentificacion.Visible = false;
-            // 
-            // NombreIdentificacion
-            // 
-            this.NombreIdentificacion.FillWeight = 149.2386F;
-            this.NombreIdentificacion.HeaderText = "Tipo Identificacion";
-            this.NombreIdentificacion.Name = "NombreIdentificacion";
-            this.NombreIdentificacion.ReadOnly = true;
-            // 
-            // ActivoIdentificacion
-            // 
-            this.ActivoIdentificacion.FillWeight = 50.76142F;
-            this.ActivoIdentificacion.HeaderText = "Activo";
-            this.ActivoIdentificacion.Name = "ActivoIdentificacion";
-            this.ActivoIdentificacion.ReadOnly = true;
-            this.ActivoIdentificacion.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ActivoIdentificacion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // btnLimpiarNCF
-            // 
-            this.btnLimpiarNCF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiarNCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiarNCF.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiarNCF.Location = new System.Drawing.Point(377, 29);
-            this.btnLimpiarNCF.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiarNCF.Name = "btnLimpiarNCF";
-            this.btnLimpiarNCF.Size = new System.Drawing.Size(85, 28);
-            this.btnLimpiarNCF.TabIndex = 25;
-            this.btnLimpiarNCF.Text = "Nuevo";
-            this.btnLimpiarNCF.UseVisualStyleBackColor = true;
-            this.btnLimpiarNCF.Click += new System.EventHandler(this.btnLimpiarNCF_Click);
-            // 
-            // IdNCF
-            // 
-            this.IdNCF.HeaderText = "Id";
-            this.IdNCF.Name = "IdNCF";
-            this.IdNCF.ReadOnly = true;
-            this.IdNCF.Visible = false;
-            // 
-            // NombreNCF
-            // 
-            this.NombreNCF.FillWeight = 149.2386F;
-            this.NombreNCF.HeaderText = "Tipo NCF";
-            this.NombreNCF.Name = "NombreNCF";
-            this.NombreNCF.ReadOnly = true;
-            // 
-            // ActivoNCF
-            // 
-            this.ActivoNCF.FillWeight = 50.76142F;
-            this.ActivoNCF.HeaderText = "Activo";
-            this.ActivoNCF.Name = "ActivoNCF";
-            this.ActivoNCF.ReadOnly = true;
-            // 
-            // btnLimpiaUsuario
-            // 
-            this.btnLimpiaUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnLimpiaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLimpiaUsuario.ForeColor = System.Drawing.Color.Black;
-            this.btnLimpiaUsuario.Location = new System.Drawing.Point(332, 139);
-            this.btnLimpiaUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btnLimpiaUsuario.Name = "btnLimpiaUsuario";
-            this.btnLimpiaUsuario.Size = new System.Drawing.Size(85, 28);
-            this.btnLimpiaUsuario.TabIndex = 31;
-            this.btnLimpiaUsuario.Text = "Nuevo";
-            this.btnLimpiaUsuario.UseVisualStyleBackColor = true;
             // 
             // IdUsuario
             // 
@@ -994,6 +992,19 @@
             this.ActivoUsuario.HeaderText = "Activo";
             this.ActivoUsuario.Name = "ActivoUsuario";
             this.ActivoUsuario.ReadOnly = true;
+            // 
+            // button1
+            // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(476, 28);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 27);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Nuevo";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmMaestros
             // 
@@ -1072,7 +1083,7 @@
         private System.Windows.Forms.TextBox txtNombresUsuario;
         private System.Windows.Forms.DataGridView dtgUsuario;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textApellidoUsuario;
+        private System.Windows.Forms.TextBox txtApellidosUsuario;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label13;
@@ -1098,5 +1109,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RolUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaCreacionUsuario;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ActivoUsuario;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -44,9 +44,17 @@ namespace UserInterfaceLayer
                     (c as CheckBox).Checked = false;
             }
         }
+
+        private void fillCombo(ref ComboBox cb, System.Data.DataTable dt)
+        //Metodo generico para llenar los ComboBox
+        {
+            cb.DataSource = dt;
+            cb.ValueMember = dt.Columns[0].ToString();
+            cb.DisplayMember = dt.Columns[1].ToString();
+        }
         #endregion
 
-        #region Codigo_Para:Tab_categorias_Producto
+        #region Codigo_Para: Tab_categorias_Producto
         private void tabCategoria_Enter(object sender, EventArgs e)
         //Presenta todas las categorias registradas cuando se carga/selecciona el TAB
         {
@@ -268,10 +276,12 @@ namespace UserInterfaceLayer
 
         #region Codigo_Para: Tab_Usuarios
         private void tabUsuarios_Enter(object sender, EventArgs e)
+        //Metodo para mostrar todos los usuarios registrados al entrar al tab USUARIOS
         {
             ClearTabFields(tabUsuarios);
             btnActualizaUsuario.Visible = false;
             btnGuardaUsuario.Visible = true;
+            txtNombresUsuario.Enabled = true;
             dtgUsuario.Rows.Clear();
             List<clsUsuario> usuariosList = new UsuarioLogic().GetAll();
 
@@ -283,59 +293,102 @@ namespace UserInterfaceLayer
                 dtgUsuario.Rows.Add(dtgRow);
             }
             dtgUsuario.ClearSelection();
+            fillCombo(ref cmbUserRol, new RolLogic().GetBasicInfo());
             txtNombresUsuario.Focus();
         }
+
         private void btnGuardaUsuario_Click(object sender, EventArgs e)
         {
-            if (txtNCF.Text.Trim() == string.Empty)
-            {
-                MessageBox.Show("Agregar NOMBRE Para Tipo Comprobante Fiscal");
-                return;
-            }
-            string ncfName = txtNCF.Text.Trim();
-            bool Activo = chkNCF.Checked;
-            clsTipoNCF newNCFType = new clsTipoNCF();
-            newNCFType.Nombre = ncfName;
-            newNCFType.Activo = Activo;
-            string result = new TipoNCFLogic().Insert(newNCFType);
+            if (emptyUserFields()) return;
+
+            string Names = txtNombresUsuario.Text.Trim();
+            string lastNames = txtApellidosUsuario.Text.Trim();
+            string userName = txtUsuario.Text.Trim();
+            string password = txtPassword.Text;
+            bool active = chkUsuario.Checked;
+            int rolId = Convert.ToInt32(cmbUserRol.SelectedValue);
+            clsUsuario newUser = new clsUsuario() { Nombres = Names, Apellidos = lastNames, UserName = userName, Password = password, Activo = active,Idrol=rolId };
+
+            string result = new UsuarioLogic().Insert(newUser);
             MessageBox.Show(result);
-            tabNCF_Enter(sender, e);
-            txtNCF.Focus();
+            tabUsuarios_Enter(sender, e);
         }
 
         private void btnActualizaUsuario_Click(object sender, EventArgs e)
         {
-            clsTipoNCF ncfToModify = new clsTipoNCF();
-            ncfToModify.Id = Convert.ToInt32(dtgNCF.SelectedRows[0].Cells["IdNCF"].Value);
-            ncfToModify.Nombre = txtNCF.Text.Trim();
-            ncfToModify.Activo = chkNCF.Checked;
+            string Names = txtNombresUsuario.Text.Trim();
+            string lastNames = txtApellidosUsuario.Text.Trim();
+            string userName = txtUsuario.Text.Trim();
+            string password = txtPassword.Text;
+            bool active = chkUsuario.Checked;
+            int rolId = Convert.ToInt32(cmbUserRol.SelectedValue);
+            clsUsuario userToModify = new clsUsuario() { Id = Convert.ToInt32(dtgUsuario.SelectedRows[0].Cells["IdUsuario"].Value),
+                                                         Nombres = Names, Apellidos = lastNames, UserName = userName, Password = password,
+                                                         Activo = active, Idrol = rolId };
 
-            string result = new TipoNCFLogic().Update(ncfToModify);
+            string result = new UsuarioLogic().Update(userToModify);
             MessageBox.Show(result);
-            tabNCF_Enter(sender, e);
-            txtNCF.Focus();
+            tabUsuarios_Enter(sender, e);
         }
 
         private void btnLimpiaUsuario_Click(object sender, EventArgs e)
         {
             tabUsuarios_Enter(sender, e);
+            txtNombresUsuario.Focus();
         }
 
         private void dtgUsuario_MouseHover(object sender, EventArgs e)
+        //muestra instruccion en texto flotante
         {
             ToolTip usuarioToolTip = new ToolTip();
             usuarioToolTip.SetToolTip(dtgUsuario, "Haga doble click sobre un elemento para ACTUALIZAR");
         }
 
         private void dtgUsuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        //Consultar usuario por el ID y luego llenar los campos del FORM
         {
-            txtNCF.Text = Convert.ToString(dtgNCF.SelectedRows[0].Cells["NombreNCF"].Value);
-            chkNCF.Checked = Convert.ToBoolean(dtgNCF.SelectedRows[0].Cells["ActivoNCF"].Value);
-            btnGuardaNCF.Visible = false;
-            btnActualizaNCF.Visible = true;
-            btnActualizaNCF.Location = btnGuardaNCF.Location;
+            int userId = Convert.ToInt32(dtgUsuario.SelectedRows[0].Cells["IdUsuario"].Value);
+            clsUsuario userToUpdate = new UsuarioLogic().GetById(userId);
+            txtNombresUsuario.Text = userToUpdate.Nombres;
+            txtApellidosUsuario.Text = userToUpdate.Apellidos;
+            txtUsuario.Text = userToUpdate.UserName;
+            txtUsuario.Enabled = false;
+            chkUsuario.Checked = userToUpdate.Activo;
+            cmbUserRol.SelectedValue = userToUpdate.Idrol;
+            btnGuardaUsuario.Visible = false;
+            btnActualizaUsuario.Visible = true;
+            btnActualizaUsuario.Location = btnGuardaUsuario.Location;
+        }
+       
+        private bool emptyUserFields()
+        {
+            if (txtNombresUsuario.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese NOMBRE(s)");
+                return true;
+            }
+            if (txtApellidosUsuario.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese APELLIDO(s)");
+                return true;
+            }
+            if (txtUsuario.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese USERNAME");
+                return true;
+            }
+            if (txtPassword.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese CONTRASEÑA");
+                return true;
+            }
+            if (Convert.ToInt32(cmbUserRol.SelectedValue)==0)
+            {
+                MessageBox.Show("Elija un ROL de usuario");
+                return true;
+            }
+            return false;
         }
         #endregion
-
     }
 }

@@ -24,14 +24,15 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Nombres", newUser.Nombres));
                 parameters.Add(new DataParameter("@Apellidos", newUser.Apellidos));
                 parameters.Add(new DataParameter("@Usuario", newUser.UserName));
-                parameters.Add(new DataParameter("@Password", newUser.Password));
-                parameters.Add(new DataParameter("@IdRol", newUser.Rol.Id));
+                parameters.Add(new DataParameter("@Password", EncodeText(newUser.Password)));
+                parameters.Add(new DataParameter("@IdRol", newUser.Idrol));
+                parameters.Add(new DataParameter("@Activo", newUser.Activo));
                 
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspInsertUser", parameters);
-                result = parameters[5].Value.ToString();
+                result = parameters[6].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -55,16 +56,15 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Id", user.Id));
                 parameters.Add(new DataParameter("@Nombres", user.Nombres));
                 parameters.Add(new DataParameter("@Apellidos", user.Apellidos));
-                parameters.Add(new DataParameter("@Usuario", user.UserName));
                 parameters.Add(new DataParameter("@Password", EncodeText(user.Password)));
-                parameters.Add(new DataParameter("@IdRol", user.Rol.Id));
+                parameters.Add(new DataParameter("@IdRol", user.Idrol));
                 parameters.Add(new DataParameter("@Estado", user.Activo));
                 
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspUpdatetUser", parameters);
-                result = parameters[5].Value.ToString();
+                result = parameters[6].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -85,14 +85,22 @@ namespace BusinessLayer
                    {
                        Id = Convert.ToInt32(row["Id"]),
                        Nombres = row["Nombres"].ToString(),
-                       Apellidos=row["Apellidos"].ToString(),
-                       Rol=new clsRol { Id= Convert.ToInt32(row["IdRol"])},
-                       fechaCreacion=Convert.ToDateTime(row["FechaCreacion"]),
-                       Activo=Convert.ToBoolean(row["Activo"])
+                       Apellidos = row["Apellidos"].ToString(),
+                       UserName = row["Usuario"].ToString(),
+                       Idrol= Convert.ToInt32(row["IdRol"]),
+                       Rol = new clsRol { Id = Convert.ToInt32(row["IdRol"]) },
+                       fechaCreacion = Convert.ToDateTime(row["FechaCreacion"]),
+                       Activo = Convert.ToBoolean(row["Activo"])
                    }).ToList();
+            dt.Dispose();
             return lst;
         }
 
+        public clsUsuario GetById(int userId)
+        {
+            clsUsuario user = GetAll().Where(a => a.Id == userId).FirstOrDefault();
+            return user;
+        }
         public clsUsuario Validate(string userName,string password)
         
         /* consulto el userName en BD (listo)

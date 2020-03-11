@@ -8,8 +8,8 @@ namespace DreamSkyEntities
     {
         public int Id { get; set; }
         public string Nombre { get; set; }
-        private int limiteEmpleados { get; set; }
-        private int limiteEnDemanda { get; set; }
+        public int limiteEmpleados { get; set; }
+        public int limiteEnDemanda { get; set; }
         public bool Activo { get; set; }
         public List<clsPermiso> Permisos { get; set; }
 
