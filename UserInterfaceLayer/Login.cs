@@ -23,8 +23,8 @@ namespace UserInterfaceLayer
             InitializeComponent();
             Wait.Abort();
         }
-        public void Presentacion() { Application.Run(new Splash()); }
-        private void button2_Click(object sender, EventArgs e)
+        private void Presentacion() { Application.Run(new Splash()); }//Muestra el splash
+        private void btnLoginCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -34,46 +34,48 @@ namespace UserInterfaceLayer
             this.Close();
         }
 
-        private void textBox1_Enter(object sender, EventArgs e)
+        #region PlaceHolders
+        private void txtLoginUsuario_Enter(object sender, EventArgs e)
         {
-            if(textBox1.Text == "USUARIO")
+            if(txtLoginUsuario.Text == "USUARIO")
             {
-                textBox1.Text = "";
-                textBox1.ForeColor = Color.White;
+                txtLoginUsuario.Text = "";
+                txtLoginUsuario.ForeColor = Color.White;
             }
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void txtLoginUsuario_Leave(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (txtLoginUsuario.Text == "")
             {
-                textBox1.Text = "USUARIO";
-                textBox1.ForeColor = Color.DimGray;
+                txtLoginUsuario.Text = "USUARIO";
+                txtLoginUsuario.ForeColor = Color.DimGray;
             }
 
         }
 
-        private void textBox2_Enter(object sender, EventArgs e)
+        private void txtLoginPassword_Enter(object sender, EventArgs e)
         {
-            if (textBox2.Text == "CONTRASEÑA")
+            if (txtLoginPassword.Text == "CONTRASEÑA")
             {
-                textBox2.Text = "";
-                textBox2.ForeColor = Color.White;
-                textBox2.UseSystemPasswordChar = true;
+                txtLoginPassword.Text = "";
+                txtLoginPassword.ForeColor = Color.White;
+                txtLoginPassword.UseSystemPasswordChar = true;
             }
         }
 
-        private void textBox2_Leave(object sender, EventArgs e)
+        private void txtLoginPassword_Leave(object sender, EventArgs e)
         {
-            if (textBox2.Text == "")
+            if (txtLoginPassword.Text == "")
             {
-                textBox2.Text = "CONTRASEÑA";
-                textBox2.ForeColor = Color.DimGray;
-                textBox2.UseSystemPasswordChar = false;
+                txtLoginPassword.Text = "CONTRASEÑA";
+                txtLoginPassword.ForeColor = Color.DimGray;
+                txtLoginPassword.UseSystemPasswordChar = false;
             }
         }
+        #endregion
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLoginAcceder_Click(object sender, EventArgs e)
         {
             this.Hide();
         }

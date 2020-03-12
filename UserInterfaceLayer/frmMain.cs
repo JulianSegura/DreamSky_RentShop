@@ -49,7 +49,7 @@ namespace UserInterfaceLayer
                 Sidebar.Width = 45;
                 SidebarWrapper.Width = 70;
                 Separador.Width = 35;
-                bunifuFlatButton7.Width = 45;
+                btnMainLogout.Width = 45;
                 AnimacionSider1.Show(Sidebar);
                 label1.Text = "MENÚ";
             }
@@ -59,7 +59,7 @@ namespace UserInterfaceLayer
                 Sidebar.Width = 202;
                 SidebarWrapper.Width = 226;
                 Separador.Width = 252;
-                bunifuFlatButton7.Width = 202;
+                btnMainLogout.Width = 202;
                 AnimacionSider2.Show(Sidebar);
                 label1.Text = "OCULTAR MENÚ";
             }
@@ -81,50 +81,50 @@ namespace UserInterfaceLayer
             formulariohijo.Show();
         }
 
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        private void btnMainRentas_Click(object sender, EventArgs e)
         {
             var frmRentas = new frmRentas(this);
             Formhijo(frmRentas);
-            bunifuFlatButton1.Enabled = false;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = false;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "RENTAS";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "RENTAS") bunifuFlatButton1.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "RENTAS") btnMainRentas.DisabledColor = Color.DarkSlateGray;
         }
 
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        private void btnMainClientes_Click(object sender, EventArgs e)
         {
             var frmClientes = new frmClientes(this);
             Formhijo(frmClientes);
 
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = false;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = false;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "CLIENTES";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "CLIENTES") bunifuFlatButton2.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "CLIENTES") btnMainClientes.DisabledColor = Color.DarkSlateGray;
         }
 
-        private void bunifuFlatButton3_Click(object sender, EventArgs e)
+        private void btnMainProductos_Click(object sender, EventArgs e)
         {
             var frmProductos = new frmProductos(this);
             Formhijo(frmProductos);
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = false;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = false;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "PRODUCTOS";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "PRODUCTOS") bunifuFlatButton3.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "PRODUCTOS") btnMainProductos.DisabledColor = Color.DarkSlateGray;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -137,70 +137,71 @@ namespace UserInterfaceLayer
             Separador.Width = 252;
             AnimacionSider2.Show(Sidebar);
             label1.Text = "OCULTAR MENÚ";
+            //EnableButtons();
         }
 
-        private void bunifuFlatButton6_Click(object sender, EventArgs e)
+        private void btnMainMaestros_Click(object sender, EventArgs e)
         {
             var frmMaestro = new frmMaestros(this);
             Formhijo(frmMaestro);
 
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = false;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = false;
             lblFormActual.Text = "MAESTROS";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "MAESTROS") bunifuFlatButton6.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "MAESTROS") btnMainMaestros.DisabledColor = Color.DarkSlateGray;
         }
         public void EnableButtons()
         {
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "";
         }
 
-        public static implicit operator frmMain(frmProductos v)
-        {
-            throw new NotImplementedException();
-        }
+        //public static implicit operator frmMain(frmProductos v)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        private void bunifuFlatButton4_Click(object sender, EventArgs e)
+        private void btnMainReportes_Click(object sender, EventArgs e)
         {
             var frmReportes = new frmReportes(this);
             Formhijo(frmReportes);
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = false;
-            bunifuFlatButton5.Enabled = true;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = false;
+            btnMainPerfil.Enabled = true;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "REPORTES";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "REPORTES") bunifuFlatButton4.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "REPORTES") btnMainReportes.DisabledColor = Color.DarkSlateGray;
         }
 
-        private void bunifuFlatButton5_Click(object sender, EventArgs e)
+        private void btnMainPerfil_Click(object sender, EventArgs e)
         {
             var frmPerfil = new frmPerfil(this);
             Formhijo(frmPerfil);
-            bunifuFlatButton1.Enabled = true;
-            bunifuFlatButton2.Enabled = true;
-            bunifuFlatButton3.Enabled = true;
-            bunifuFlatButton4.Enabled = true;
-            bunifuFlatButton5.Enabled = false;
-            bunifuFlatButton6.Enabled = true;
+            btnMainRentas.Enabled = true;
+            btnMainClientes.Enabled = true;
+            btnMainProductos.Enabled = true;
+            btnMainReportes.Enabled = true;
+            btnMainPerfil.Enabled = false;
+            btnMainMaestros.Enabled = true;
             lblFormActual.Text = "PERFIL";
             lblFormActual.Visible = true;
-            if (lblFormActual.Text == "PERFIL") bunifuFlatButton5.DisabledColor = Color.DarkSlateGray;
+            if (lblFormActual.Text == "PERFIL") btnMainPerfil.DisabledColor = Color.DarkSlateGray;
         }
 
-        private void bunifuFlatButton7_Click(object sender, EventArgs e)
+        private void btnMainLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }

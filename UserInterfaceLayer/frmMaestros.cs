@@ -401,10 +401,78 @@ namespace UserInterfaceLayer
 
         private void tabRoles_Enter(object sender, EventArgs e)
         {
+            ClearTabFields(tabRoles);
+            btnActualizaRol.Visible = false;
+            btnGuardaRol.Visible = true;
+            dtgRoles.Rows.Clear();
 
+            List<clsRol> roles = new RolLogic().GetAll();
+            foreach (clsRol rol in roles)
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row.CreateCells(dtgRoles);
+                row.SetValues(rol.Id, rol.Nombre, rol.limiteEmpleados, rol.limiteEnDemanda, rol.Activo, "Permisos");
+                dtgRoles.Rows.Add(row);
+            }
+
+            dtgRoles.ClearSelection();
+            txtNombreRol.Focus();
         }
+
+        private void dtgRoles_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtNombreRol.Text = Convert.ToString(dtgRoles.SelectedRows[0].Cells["nombreRol"].Value);
+            chkRol.Checked = Convert.ToBoolean(dtgRoles.SelectedRows[0].Cells["activoRol"].Value);
+            btnGuardaRol.Visible = false;
+            btnActualizaRol.Visible = true;
+            btnActualizaRol.Location = btnGuardaRol.Location;
+        }
+
+        private void btnLimpiaRol_Click(object sender, EventArgs e)
+        {
+            tabRoles_Enter(sender, e);
+        }
+       
+        private void btnGuardaRol_Click(object sender, EventArgs e)
+        {
+            if (txtNombreRol.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Ingrese Nombre ROL");
+                txtNombreRol.Focus();
+                return;
+            }
+            string nombreRol = txtNombreRol.Text.Trim();
+            bool activoRol = chkRol.Checked;
+            clsRol newRol = new clsRol() { Nombre = nombreRol, Activo = activoRol, limiteEmpleados = 1, limiteEnDemanda = 2 };
+
+            string result = new RolLogic().Insert(newRol);
+            MessageBox.Show(result);
+            tabRoles_Enter(sender, e);
+        }
+       
+        private void btnActualizaRol_Click(object sender, EventArgs e)
+        {
+            if (txtNombreRol.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Ingrese Nombre ROL");
+                txtNombreRol.Focus();
+                return;
+            }
+
+            clsRol rolToModify = new clsRol();
+            string name = txtNombreRol.Text.Trim();
+            bool activo = chkRol.Checked;
+            rolToModify.Id = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"].Value);
+            rolToModify.limiteEmpleados= Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteEmpleadosRol"].Value);
+            rolToModify.limiteEnDemanda= Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteDemandaRol"].Value);
+            rolToModify.Nombre = name;
+            rolToModify.Activo = activo;
+
+            string result = new RolLogic().Update(rolToModify);
+            MessageBox.Show(result);
+            tabRoles_Enter(sender, e);
+        }
+       
         #endregion
-
-
     }
 }
