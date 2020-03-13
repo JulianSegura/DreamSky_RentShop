@@ -137,7 +137,7 @@ namespace UserInterfaceLayer
             Separador.Width = 252;
             AnimacionSider2.Show(Sidebar);
             label1.Text = "OCULTAR MENÚ";
-            //EnableButtons();
+            EnableButtons();
         }
 
         private void btnMainMaestros_Click(object sender, EventArgs e)
@@ -163,6 +163,7 @@ namespace UserInterfaceLayer
             btnMainReportes.Enabled = true;
             btnMainPerfil.Enabled = true;
             btnMainMaestros.Enabled = true;
+            btnMainLogout.Enabled = true;
             lblFormActual.Text = "";
         }
 

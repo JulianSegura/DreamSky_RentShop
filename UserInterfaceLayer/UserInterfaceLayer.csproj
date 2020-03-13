@@ -261,5 +261,8 @@
   <ItemGroup>
     <None Include="Resources\zoom.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Perfil png.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

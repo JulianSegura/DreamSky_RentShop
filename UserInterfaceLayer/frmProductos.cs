@@ -33,5 +33,30 @@ namespace UserInterfaceLayer
         {
             _mainForm.EnableButtons();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodeProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

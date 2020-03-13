@@ -118,85 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Restore Window 2_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Restore Window 2_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Desing 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Desing 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Maximize Window_2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Maximize Window_2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="product" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="LOGO-AZUL" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LOGO-AZUL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Splash1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Splash1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Desing" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Desing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="administrative-docs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\administrative-docs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Dream Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Dream Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo 3 png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo 3 png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="administrative-docs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\administrative-docs.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close Window_ 2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close Window_ 2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Minimize Window_2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Minimize Window_2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="product" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo 3 png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo 3 png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Desing 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Desing 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Menu_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Menu_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="LOGO-AZUL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LOGO-AZUL.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="RhaegarlogoBR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RhaegarlogoBR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Logo3 PNG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Logo3 PNG.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="my-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\my-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="basic_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\basic_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pngocean.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pngocean.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="uapa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\uapa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Minimize Window_2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Minimize Window_2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Maximize Window_2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Maximize Window_2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="images" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close Window_ 2 48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close Window_ 2 48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Menu_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Menu_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Restore Window 2_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Restore Window 2_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="my-account" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\my-account.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Desing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Desing.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RhaegarlogoBR" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RhaegarlogoBR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="basic_lock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basic_lock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pngocean.com" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngocean.com.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="zoom" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\zoom.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Perfil png" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Perfil png.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -29,41 +29,39 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgClientes = new System.Windows.Forms.DataGridView();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.fileSystemWatcher2 = new System.IO.FileSystemWatcher();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnActualiza = new System.Windows.Forms.Button();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtIdentificacion = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtCelular = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.txtFecha = new System.Windows.Forms.TextBox();
+            this.txtTipoIdentificacion = new System.Windows.Forms.ComboBox();
+            this.txtNacionalidad = new System.Windows.Forms.ComboBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.Separador = new Bunifu.Framework.UI.BunifuSeparator();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
             this.SuspendLayout();
@@ -78,24 +76,24 @@
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(136, 31);
-            this.button1.TabIndex = 0;
+            this.button1.TabIndex = 70;
             this.button1.Text = "Cerrar";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // dtgClientes
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtgClientes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 316);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(829, 326);
-            this.dataGridView1.TabIndex = 2;
+            this.dtgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgClientes.Location = new System.Drawing.Point(11, 316);
+            this.dtgClientes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgClientes.Name = "dtgClientes";
+            this.dtgClientes.RowHeadersWidth = 51;
+            this.dtgClientes.RowTemplate.Height = 24;
+            this.dtgClientes.Size = new System.Drawing.Size(829, 326);
+            this.dtgClientes.TabIndex = 80;
             // 
             // fileSystemWatcher1
             // 
@@ -107,41 +105,41 @@
             this.fileSystemWatcher2.EnableRaisingEvents = true;
             this.fileSystemWatcher2.SynchronizingObject = this;
             // 
-            // button2
+            // btnGuardar
             // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(16, 265);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(136, 31);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Guardar";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnGuardar.BackColor = System.Drawing.Color.Silver;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Location = new System.Drawing.Point(16, 265);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(136, 31);
+            this.btnGuardar.TabIndex = 67;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btnActualiza
             // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(302, 265);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(136, 31);
-            this.button3.TabIndex = 28;
-            this.button3.Text = "Actualizar";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnActualiza.BackColor = System.Drawing.Color.Silver;
+            this.btnActualiza.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualiza.Location = new System.Drawing.Point(302, 265);
+            this.btnActualiza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnActualiza.Name = "btnActualiza";
+            this.btnActualiza.Size = new System.Drawing.Size(136, 31);
+            this.btnActualiza.TabIndex = 69;
+            this.btnActualiza.Text = "Actualizar";
+            this.btnActualiza.UseVisualStyleBackColor = false;
             // 
-            // checkBox1
+            // chkActivo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(215, 48);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(68, 21);
-            this.checkBox1.TabIndex = 31;
-            this.checkBox1.Text = "Activo";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Location = new System.Drawing.Point(215, 48);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(68, 21);
+            this.chkActivo.TabIndex = 31;
+            this.chkActivo.Text = "Activo";
+            this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -155,7 +153,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 196);
+            this.label4.Location = new System.Drawing.Point(13, 165);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 17);
             this.label4.TabIndex = 53;
@@ -164,7 +162,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 164);
+            this.label8.Location = new System.Drawing.Point(13, 196);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(94, 17);
             this.label8.TabIndex = 52;
@@ -179,12 +177,12 @@
             this.label1.TabIndex = 37;
             this.label1.Text = "Id:";
             // 
-            // textBox4
+            // txtIdentificacion
             // 
-            this.textBox4.Location = new System.Drawing.Point(159, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 22);
-            this.textBox4.TabIndex = 40;
+            this.txtIdentificacion.Location = new System.Drawing.Point(159, 223);
+            this.txtIdentificacion.Name = "txtIdentificacion";
+            this.txtIdentificacion.Size = new System.Drawing.Size(208, 22);
+            this.txtIdentificacion.TabIndex = 61;
             // 
             // label12
             // 
@@ -204,26 +202,17 @@
             this.label2.TabIndex = 38;
             this.label2.Text = "Nombres:";
             // 
-            // label9
+            // txtCorreo
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(456, 140);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(56, 17);
-            this.label9.TabIndex = 47;
-            this.label9.Text = "Celular:";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(541, 109);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(299, 22);
-            this.textBox7.TabIndex = 48;
+            this.txtCorreo.Location = new System.Drawing.Point(541, 134);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(299, 22);
+            this.txtCorreo.TabIndex = 65;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(456, 74);
+            this.label10.Location = new System.Drawing.Point(456, 137);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(55, 17);
             this.label10.TabIndex = 45;
@@ -241,7 +230,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(456, 46);
+            this.label6.Location = new System.Drawing.Point(456, 76);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 17);
             this.label6.TabIndex = 43;
@@ -259,77 +248,265 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(456, 109);
+            this.label5.Location = new System.Drawing.Point(456, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 17);
             this.label5.TabIndex = 41;
             this.label5.Text = "Telefono:";
             // 
-            // textBox8
+            // txtTelefono
             // 
-            this.textBox8.Location = new System.Drawing.Point(541, 77);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(299, 22);
-            this.textBox8.TabIndex = 46;
+            this.txtTelefono.Location = new System.Drawing.Point(541, 98);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(299, 22);
+            this.txtTelefono.TabIndex = 64;
             // 
-            // textBox6
+            // txtCelular
             // 
-            this.textBox6.Location = new System.Drawing.Point(541, 47);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(299, 22);
-            this.textBox6.TabIndex = 44;
+            this.txtCelular.Location = new System.Drawing.Point(541, 72);
+            this.txtCelular.Name = "txtCelular";
+            this.txtCelular.Size = new System.Drawing.Size(299, 22);
+            this.txtCelular.TabIndex = 63;
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(159, 74);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 22);
-            this.textBox2.TabIndex = 56;
+            this.txtNombre.Location = new System.Drawing.Point(159, 74);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(258, 22);
+            this.txtNombre.TabIndex = 56;
             // 
-            // textBox3
+            // txtApellido
             // 
-            this.textBox3.Location = new System.Drawing.Point(159, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(258, 22);
-            this.textBox3.TabIndex = 57;
+            this.txtApellido.Location = new System.Drawing.Point(159, 102);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(258, 22);
+            this.txtApellido.TabIndex = 57;
             // 
-            // textBox5
+            // txtFecha
             // 
-            this.textBox5.Location = new System.Drawing.Point(541, 137);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(299, 22);
-            this.textBox5.TabIndex = 42;
+            this.txtFecha.Location = new System.Drawing.Point(159, 130);
+            this.txtFecha.Name = "txtFecha";
+            this.txtFecha.Size = new System.Drawing.Size(257, 22);
+            this.txtFecha.TabIndex = 58;
             // 
-            // textBox9
+            // txtTipoIdentificacion
             // 
-            this.textBox9.Location = new System.Drawing.Point(159, 130);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(257, 22);
-            this.textBox9.TabIndex = 58;
+            this.txtTipoIdentificacion.FormattingEnabled = true;
+            this.txtTipoIdentificacion.Location = new System.Drawing.Point(159, 161);
+            this.txtTipoIdentificacion.Name = "txtTipoIdentificacion";
+            this.txtTipoIdentificacion.Size = new System.Drawing.Size(257, 24);
+            this.txtTipoIdentificacion.TabIndex = 59;
             // 
-            // comboBox2
+            // txtNacionalidad
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(159, 161);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(257, 24);
-            this.comboBox2.TabIndex = 59;
+            this.txtNacionalidad.FormattingEnabled = true;
+            this.txtNacionalidad.Items.AddRange(new object[] {
+            "Afganistán",
+            "Albania",
+            "Alemania",
+            "Andorra",
+            "Angola",
+            "Antigua y Barbuda",
+            "Arabia Saudita",
+            "Argelia",
+            "Argentina",
+            "Armenia",
+            "Australia",
+            "Austria",
+            "Azerbaiyán",
+            "Bahamas",
+            "Bangladés",
+            "Barbados",
+            "Baréin",
+            "Bélgica",
+            "Belice",
+            "Benín",
+            "Bielorrusia",
+            "Birmania",
+            "Bolivia",
+            "Bosnia y Herzegovina",
+            "Botsuana",
+            "Brasil",
+            "Brunéi",
+            "Bulgaria",
+            "Burkina Faso",
+            "Burundi",
+            "Bután",
+            "Cabo Verde",
+            "Camboya",
+            "Camerún",
+            "Canadá",
+            "Catar",
+            "Chad",
+            "Chile",
+            "China",
+            "Chipre",
+            "Ciudad del Vaticano",
+            "Colombia",
+            "Comoras",
+            "Corea del Norte",
+            "Corea del Sur",
+            "Costa de Marfil",
+            "Costa Rica",
+            "Croacia",
+            "Cuba",
+            "Dinamarca",
+            "Dominica",
+            "Ecuador",
+            "Egipto",
+            "El Salvador",
+            "Emiratos Árabes Unidos",
+            "Eritrea",
+            "Eslovaquia",
+            "Eslovenia",
+            "España",
+            "Estados Unidos",
+            "Estonia",
+            "Etiopía",
+            "Filipinas",
+            "Finlandia",
+            "Fiyi",
+            "Francia",
+            "Gabón",
+            "Gambia",
+            "Georgia",
+            "Ghana",
+            "Granada",
+            "Grecia",
+            "Guatemala",
+            "Guyana",
+            "Guinea",
+            "Guinea ecuatorial",
+            "Guinea-Bisáu",
+            "Haití",
+            "Honduras",
+            "Hungría",
+            "India",
+            "Indonesia",
+            "Irak",
+            "Irán",
+            "Irlanda",
+            "Islandia",
+            "Islas Marshall",
+            "Islas Salomón",
+            "Israel",
+            "Italia",
+            "Jamaica",
+            "Japón",
+            "Jordania",
+            "Kazajistán",
+            "Kenia",
+            "Kirguistán",
+            "Kiribati",
+            "Kuwait",
+            "Laos",
+            "Lesoto",
+            "Letonia",
+            "Líbano",
+            "Liberia",
+            "Libia",
+            "Liechtenstein",
+            "Lituania",
+            "Luxemburgo",
+            "Macedonia del Norte",
+            "Madagascar",
+            "Malasia",
+            "Malaui",
+            "Maldivas",
+            "Malí",
+            "Malta",
+            "Marruecos",
+            "Mauricio",
+            "Mauritania",
+            "México",
+            "Micronesia",
+            "Moldavia",
+            "Mónaco",
+            "Mongolia",
+            "Montenegro",
+            "Mozambique",
+            "Namibia",
+            "Nauru",
+            "Nepal",
+            "Nicaragua",
+            "Níger",
+            "Nigeria",
+            "Noruega",
+            "Nueva Zelanda",
+            "Omán",
+            "Países Bajos",
+            "Pakistán",
+            "Palaos",
+            "Panamá",
+            "Papúa Nueva Guinea",
+            "Paraguay",
+            "Perú",
+            "Polonia",
+            "Portugal",
+            "Reino Unido",
+            "República Centroafricana",
+            "República Checa",
+            "República del Congo",
+            "República Democrática del Congo",
+            "República Dominicana",
+            "Ruanda",
+            "Rumanía",
+            "Rusia",
+            "Samoa",
+            "San Cristóbal y Nieves",
+            "San Marino",
+            "San Vicente y las Granadinas",
+            "Santa Lucía",
+            "Santo Tomé y Príncipe",
+            "Senegal",
+            "Serbia",
+            "Seychelles",
+            "Sierra Leona",
+            "Singapur",
+            "Siria",
+            "Somalia",
+            "Sri Lanka",
+            "Suazilandia",
+            "Sudáfrica",
+            "Sudán",
+            "Sudán del Sur",
+            "Suecia",
+            "Suiza",
+            "Surinam",
+            "Tailandia",
+            "Tanzania",
+            "Tayikistán",
+            "Timor Oriental",
+            "Togo",
+            "Tonga",
+            "Trinidad y Tobago",
+            "Túnez",
+            "Turkmenistán",
+            "Turquía",
+            "Tuvalu",
+            "Ucrania",
+            "Uganda",
+            "Uruguay",
+            "Uzbekistán",
+            "Vanuatu",
+            "Venezuela",
+            "Vietnam",
+            "Yemen",
+            "Yibuti",
+            "Zambia",
+            "Zimbabue"});
+            this.txtNacionalidad.Location = new System.Drawing.Point(159, 193);
+            this.txtNacionalidad.Name = "txtNacionalidad";
+            this.txtNacionalidad.Size = new System.Drawing.Size(258, 24);
+            this.txtNacionalidad.TabIndex = 60;
             // 
-            // comboBox1
+            // txtDireccion
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(159, 193);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(258, 24);
-            this.comboBox1.TabIndex = 60;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(541, 167);
-            this.textBox10.Multiline = true;
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(299, 129);
-            this.textBox10.TabIndex = 51;
+            this.txtDireccion.Location = new System.Drawing.Point(541, 167);
+            this.txtDireccion.Multiline = true;
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(299, 129);
+            this.txtDireccion.TabIndex = 66;
             // 
             // label13
             // 
@@ -342,18 +519,18 @@
             this.label13.TabIndex = 61;
             this.label13.Text = ".....";
             // 
-            // button4
+            // btnNuevo
             // 
-            this.button4.BackColor = System.Drawing.Color.Silver;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(160, 265);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(136, 31);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "Nuevo Registro";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnNuevo.BackColor = System.Drawing.Color.Silver;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevo.Location = new System.Drawing.Point(160, 265);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(136, 31);
+            this.btnNuevo.TabIndex = 68;
+            this.btnNuevo.Text = "Nuevo Registro";
+            this.btnNuevo.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -406,37 +583,35 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtIdentificacion);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtCelular);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtApellido);
+            this.Controls.Add(this.txtFecha);
+            this.Controls.Add(this.txtTipoIdentificacion);
+            this.Controls.Add(this.txtNacionalidad);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.btnNuevo);
+            this.Controls.Add(this.btnActualiza);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dtgClientes);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.chkActivo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmClientes";
             this.Text = "Form4";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form4_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).EndInit();
             this.ResumeLayout(false);
@@ -447,38 +622,36 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgClientes;
         private System.IO.FileSystemWatcher fileSystemWatcher1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnGuardar;
         private System.IO.FileSystemWatcher fileSystemWatcher2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button btnActualiza;
+        private System.Windows.Forms.CheckBox chkActivo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtIdentificacion;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtCelular;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.ComboBox txtTipoIdentificacion;
+        private System.Windows.Forms.ComboBox txtNacionalidad;
+        private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label14;
         private Bunifu.Framework.UI.BunifuSeparator Separador;
     }
