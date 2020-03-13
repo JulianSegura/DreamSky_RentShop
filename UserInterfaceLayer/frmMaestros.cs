@@ -472,7 +472,14 @@ namespace UserInterfaceLayer
             MessageBox.Show(result);
             tabRoles_Enter(sender, e);
         }
-       
+
+        private void dtgRoles_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         #endregion
+
+
     }
 }
