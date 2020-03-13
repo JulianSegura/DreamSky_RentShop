@@ -507,7 +507,7 @@ namespace UserInterfaceLayer
 
         }
 
-        private void dtgRoles_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dtgRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtgRoles.Columns[e.ColumnIndex].Name == "permisosRol")
             {
