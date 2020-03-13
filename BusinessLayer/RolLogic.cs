@@ -82,7 +82,7 @@ namespace BusinessLayer
             DataTable dt=new DataTable();
             dt.Columns.Add("Id",typeof(int));
             dt.Columns.Add("Nombre", typeof(string));
-            var lst = GetAll().Where(r => r.Activo = true);
+            var lst = GetAll().Where(r => r.Activo == true);
             dt.Rows.Add(0, "Seleccione");
             foreach (clsRol rol in lst)
             {

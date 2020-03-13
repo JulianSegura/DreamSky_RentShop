@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tabControlMaestros = new System.Windows.Forms.TabControl();
             this.tabCategoria = new System.Windows.Forms.TabPage();
@@ -67,8 +68,13 @@
             this.NombreNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivoNCF = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabRoles = new System.Windows.Forms.TabPage();
+            this.btnGuardaPermisos = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dtgPermisos = new System.Windows.Forms.DataGridView();
+            this.idPermiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.formularioPermiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.activoPermiso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.asignarPermiso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
             this.btnLimpiaRol = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -438,8 +444,8 @@
             this.IdIdentificacion,
             this.NombreIdentificacion,
             this.ActivoIdentificacion});
-            this.dtgTipoIdentificacion.Location = new System.Drawing.Point(5, 78);
-            this.dtgTipoIdentificacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgTipoIdentificacion.Location = new System.Drawing.Point(4, 63);
+            this.dtgTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgTipoIdentificacion.Name = "dtgTipoIdentificacion";
             this.dtgTipoIdentificacion.ReadOnly = true;
             this.dtgTipoIdentificacion.RowHeadersVisible = false;
@@ -636,6 +642,7 @@
             // tabRoles
             // 
             this.tabRoles.BackColor = System.Drawing.Color.PaleGreen;
+            this.tabRoles.Controls.Add(this.btnGuardaPermisos);
             this.tabRoles.Controls.Add(this.label15);
             this.tabRoles.Controls.Add(this.dtgPermisos);
             this.tabRoles.Controls.Add(this.txtNombreRol);
@@ -653,6 +660,18 @@
             this.tabRoles.TabIndex = 4;
             this.tabRoles.Text = "Roles y Permisos";
             this.tabRoles.Enter += new System.EventHandler(this.tabRoles_Enter);
+            // 
+            // btnGuardaPermisos
+            // 
+            this.btnGuardaPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGuardaPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardaPermisos.Location = new System.Drawing.Point(432, 342);
+            this.btnGuardaPermisos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGuardaPermisos.Name = "btnGuardaPermisos";
+            this.btnGuardaPermisos.Size = new System.Drawing.Size(140, 28);
+            this.btnGuardaPermisos.TabIndex = 8;
+            this.btnGuardaPermisos.Text = "Asignar Permisos";
+            this.btnGuardaPermisos.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
@@ -675,8 +694,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgPermisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPermisos.Location = new System.Drawing.Point(7, 263);
-            this.dtgPermisos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgPermisos.Location = new System.Drawing.Point(5, 214);
+            this.dtgPermisos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgPermisos.MultiSelect = false;
             this.dtgPermisos.Name = "dtgPermisos";
             this.dtgPermisos.RowHeadersVisible = false;
@@ -684,8 +703,35 @@
             this.dtgPermisos.RowTemplate.Height = 24;
             this.dtgPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPermisos.ShowCellToolTips = false;
-            this.dtgPermisos.Size = new System.Drawing.Size(759, 194);
+            this.dtgPermisos.Size = new System.Drawing.Size(569, 158);
             this.dtgPermisos.TabIndex = 6;
+            // 
+            // idPermiso
+            // 
+            this.idPermiso.HeaderText = "Id";
+            this.idPermiso.Name = "idPermiso";
+            this.idPermiso.ReadOnly = true;
+            this.idPermiso.Visible = false;
+            // 
+            // formularioPermiso
+            // 
+            this.formularioPermiso.HeaderText = "Formulario";
+            this.formularioPermiso.Name = "formularioPermiso";
+            this.formularioPermiso.ReadOnly = true;
+            this.formularioPermiso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // activoPermiso
+            // 
+            this.activoPermiso.HeaderText = "Permiso Activo";
+            this.activoPermiso.Name = "activoPermiso";
+            this.activoPermiso.ReadOnly = true;
+            this.activoPermiso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // asignarPermiso
+            // 
+            this.asignarPermiso.HeaderText = "Asignar a ROL";
+            this.asignarPermiso.Name = "asignarPermiso";
+            this.asignarPermiso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // txtNombreRol
             // 
@@ -804,6 +850,7 @@
             this.dtgRoles.Size = new System.Drawing.Size(759, 155);
             this.dtgRoles.TabIndex = 5;
             this.dtgRoles.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgRoles_CellDoubleClick);
+            this.dtgRoles.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgRoles_CellMouseDown);
             this.dtgRoles.MouseHover += new System.EventHandler(this.dtgRoles_MouseHover);
             // 
             // IdRol
@@ -1236,5 +1283,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn limiteDemandaRol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoRol;
         private System.Windows.Forms.DataGridViewButtonColumn permisosRol;
+        private System.Windows.Forms.Button btnGuardaPermisos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPermiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn formularioPermiso;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn activoPermiso;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn asignarPermiso;
     }
 }

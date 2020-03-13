@@ -87,8 +87,8 @@ namespace BusinessLayer
                        Nombres = row["Nombres"].ToString(),
                        Apellidos = row["Apellidos"].ToString(),
                        UserName = row["Usuario"].ToString(),
-                       Idrol= Convert.ToInt32(row["IdRol"]),
-                       Rol = new clsRol { Id = Convert.ToInt32(row["IdRol"]) },
+                       Idrol = Convert.ToInt32(row["IdRol"]),
+                       Rol = new RolLogic().GetAll().Where(r=>r.Id== Convert.ToInt32(row["IdRol"])).FirstOrDefault(),
                        fechaCreacion = Convert.ToDateTime(row["FechaCreacion"]),
                        Activo = Convert.ToBoolean(row["Activo"])
                    }).ToList();
@@ -138,7 +138,9 @@ namespace BusinessLayer
                 user.Rol.Id = Convert.ToInt32(dt.Rows[0]["IdRol"]);
                 user.Activo= Convert.ToBoolean(dt.Rows[0]["Activo"]);
                 user.fechaCreacion= Convert.ToDateTime(dt.Rows[0]["fechaCreacion"]);
+                
                 //consultar el rol y asignar permisos
+
             }
             
             return user;
