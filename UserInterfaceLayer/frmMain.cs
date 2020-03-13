@@ -163,6 +163,7 @@ namespace UserInterfaceLayer
             btnMainReportes.Enabled = true;
             btnMainPerfil.Enabled = true;
             btnMainMaestros.Enabled = true;
+            btnMainLogout.Enabled = true;
             lblFormActual.Text = "";
         }
 

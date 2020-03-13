@@ -16,7 +16,7 @@ namespace UserInterfaceLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmMaestros());
+            Application.Run(new Login());
 
         }
     }

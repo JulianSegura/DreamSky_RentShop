@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation1 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            BunifuAnimatorNS.Animation animation4 = new BunifuAnimatorNS.Animation();
-            BunifuAnimatorNS.Animation animation3 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             this.MenuTop = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblActualUser = new System.Windows.Forms.Label();
@@ -60,6 +60,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.AnimacionSider2 = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.MoverDashboard = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.bunifuDatepicker1 = new Bunifu.Framework.UI.BunifuDatepicker();
             this.MenuTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Restore)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Minimizar)).BeginInit();
@@ -268,7 +269,7 @@
             this.btnMainLogout.IconZoom = 60D;
             this.btnMainLogout.IsTab = false;
             this.btnMainLogout.Location = new System.Drawing.Point(13, 551);
-            this.btnMainLogout.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainLogout.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainLogout.Name = "btnMainLogout";
             this.btnMainLogout.Normalcolor = System.Drawing.Color.PaleGreen;
             this.btnMainLogout.OnHovercolor = System.Drawing.Color.LimeGreen;
@@ -335,7 +336,7 @@
             this.btnMainMaestros.IconZoom = 65D;
             this.btnMainMaestros.IsTab = false;
             this.btnMainMaestros.Location = new System.Drawing.Point(11, 334);
-            this.btnMainMaestros.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainMaestros.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainMaestros.Name = "btnMainMaestros";
             this.btnMainMaestros.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainMaestros.OnHovercolor = System.Drawing.Color.Green;
@@ -374,7 +375,7 @@
             this.btnMainPerfil.IconZoom = 65D;
             this.btnMainPerfil.IsTab = false;
             this.btnMainPerfil.Location = new System.Drawing.Point(11, 286);
-            this.btnMainPerfil.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainPerfil.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainPerfil.Name = "btnMainPerfil";
             this.btnMainPerfil.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainPerfil.OnHovercolor = System.Drawing.Color.Green;
@@ -413,7 +414,7 @@
             this.btnMainReportes.IconZoom = 65D;
             this.btnMainReportes.IsTab = false;
             this.btnMainReportes.Location = new System.Drawing.Point(11, 236);
-            this.btnMainReportes.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainReportes.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainReportes.Name = "btnMainReportes";
             this.btnMainReportes.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainReportes.OnHovercolor = System.Drawing.Color.Green;
@@ -452,7 +453,7 @@
             this.btnMainProductos.IconZoom = 65D;
             this.btnMainProductos.IsTab = false;
             this.btnMainProductos.Location = new System.Drawing.Point(11, 184);
-            this.btnMainProductos.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainProductos.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainProductos.Name = "btnMainProductos";
             this.btnMainProductos.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainProductos.OnHovercolor = System.Drawing.Color.Green;
@@ -477,6 +478,7 @@
             this.AnimacionSider2.SetDecoration(this.btnMainClientes, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionSider1.SetDecoration(this.btnMainClientes, BunifuAnimatorNS.DecorationType.None);
             this.btnMainClientes.DisabledColor = System.Drawing.Color.SeaGreen;
+            this.btnMainClientes.Enabled = false;
             this.btnMainClientes.Iconcolor = System.Drawing.Color.Transparent;
             this.btnMainClientes.Iconimage = ((System.Drawing.Image)(resources.GetObject("btnMainClientes.Iconimage")));
             this.btnMainClientes.Iconimage_right = null;
@@ -490,7 +492,7 @@
             this.btnMainClientes.IconZoom = 65D;
             this.btnMainClientes.IsTab = false;
             this.btnMainClientes.Location = new System.Drawing.Point(11, 133);
-            this.btnMainClientes.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainClientes.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainClientes.Name = "btnMainClientes";
             this.btnMainClientes.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainClientes.OnHovercolor = System.Drawing.Color.Green;
@@ -529,7 +531,7 @@
             this.btnMainRentas.IconZoom = 65D;
             this.btnMainRentas.IsTab = false;
             this.btnMainRentas.Location = new System.Drawing.Point(11, 80);
-            this.btnMainRentas.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnMainRentas.Margin = new System.Windows.Forms.Padding(5);
             this.btnMainRentas.Name = "btnMainRentas";
             this.btnMainRentas.Normalcolor = System.Drawing.Color.Transparent;
             this.btnMainRentas.OnHovercolor = System.Drawing.Color.Green;
@@ -551,7 +553,7 @@
             this.Separador.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.Separador.LineThickness = 1;
             this.Separador.Location = new System.Drawing.Point(7, 62);
-            this.Separador.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Separador.Margin = new System.Windows.Forms.Padding(5);
             this.Separador.Name = "Separador";
             this.Separador.Size = new System.Drawing.Size(252, 1);
             this.Separador.TabIndex = 3;
@@ -595,28 +597,29 @@
             // 
             this.AnimacionSider1.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.AnimacionSider1.Cursor = null;
-            animation4.AnimateOnlyDifferences = true;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 20;
-            animation4.Padding = new System.Windows.Forms.Padding(30);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.AnimacionSider1.DefaultAnimation = animation4;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 20;
+            animation1.Padding = new System.Windows.Forms.Padding(30);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionSider1.DefaultAnimation = animation1;
             this.AnimacionSider1.AllAnimationsCompleted += new System.EventHandler(this.Restore_Click);
             // 
             // Formhijos
             // 
             this.Formhijos.BackColor = System.Drawing.Color.PaleGreen;
             this.Formhijos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Formhijos.Controls.Add(this.bunifuDatepicker1);
             this.Formhijos.Controls.Add(this.pictureBox2);
             this.AnimacionSider2.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionSider1.SetDecoration(this.Formhijos, BunifuAnimatorNS.DecorationType.None);
@@ -648,22 +651,22 @@
             // 
             this.AnimacionSider2.AnimationType = BunifuAnimatorNS.AnimationType.Mosaic;
             this.AnimacionSider2.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 20;
-            animation3.Padding = new System.Windows.Forms.Padding(30);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionSider2.DefaultAnimation = animation3;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 20;
+            animation2.Padding = new System.Windows.Forms.Padding(30);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.AnimacionSider2.DefaultAnimation = animation2;
             // 
             // MoverDashboard
             // 
@@ -671,6 +674,22 @@
             this.MoverDashboard.Horizontal = true;
             this.MoverDashboard.TargetControl = this.MenuTop;
             this.MoverDashboard.Vertical = true;
+            // 
+            // bunifuDatepicker1
+            // 
+            this.bunifuDatepicker1.BackColor = System.Drawing.Color.SeaGreen;
+            this.bunifuDatepicker1.BorderRadius = 0;
+            this.AnimacionSider2.SetDecoration(this.bunifuDatepicker1, BunifuAnimatorNS.DecorationType.None);
+            this.AnimacionSider1.SetDecoration(this.bunifuDatepicker1, BunifuAnimatorNS.DecorationType.None);
+            this.bunifuDatepicker1.ForeColor = System.Drawing.Color.White;
+            this.bunifuDatepicker1.Format = System.Windows.Forms.DateTimePickerFormat.Long;
+            this.bunifuDatepicker1.FormatCustom = null;
+            this.bunifuDatepicker1.Location = new System.Drawing.Point(628, 182);
+            this.bunifuDatepicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bunifuDatepicker1.Name = "bunifuDatepicker1";
+            this.bunifuDatepicker1.Size = new System.Drawing.Size(8, 8);
+            this.bunifuDatepicker1.TabIndex = 3;
+            this.bunifuDatepicker1.Value = new System.DateTime(2020, 3, 13, 9, 54, 28, 238);
             // 
             // frmMain
             // 
@@ -683,7 +702,7 @@
             this.AnimacionSider1.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.AnimacionSider2.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -735,5 +754,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox Salir;
         private System.Windows.Forms.PictureBox Restore;
+        private Bunifu.Framework.UI.BunifuDatepicker bunifuDatepicker1;
     }
 }
