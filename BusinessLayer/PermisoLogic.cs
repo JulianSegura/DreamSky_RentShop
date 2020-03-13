@@ -13,7 +13,6 @@ namespace BusinessLayer
         DatabaseManager dataManager = new DatabaseManager();
         public List<clsPermiso> GetAll()
         {
-            //uspGetAllPermisos
             List<clsPermiso> lst = new List<clsPermiso>();
             DataTable dt = dataManager.ExecuteQuery("uspGetAllPermisos", null);
 
@@ -22,14 +21,13 @@ namespace BusinessLayer
                    {
                        Id = Convert.ToInt32(row["Id"]),
                        Formulario = row["Formulario"].ToString(),
-                       Activo=Convert.ToBoolean(row["Activo"])
-                   }).Where(p=>p.Activo==true).ToList();
+                       Activo = Convert.ToBoolean(row["Activo"])
+                   }).Where(p => p.Activo == true).ToList();
             return lst;
         }
 
         public List<clsPermiso>GetByRol(int rolID)
         {
-            //uspGetAllPermisosRoles y luego getall.where.id==rolid
             List<clsPermiso> lst = new List<clsPermiso>();
             DataTable dt = dataManager.ExecuteQuery("uspGetAllPermisosRoles", null);
 
