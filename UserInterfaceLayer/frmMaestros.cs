@@ -473,27 +473,6 @@ namespace UserInterfaceLayer
             tabRoles_Enter(sender, e);
         }
 
-
-        private void dtgRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dtgRoles.Columns[e.ColumnIndex].Name == "permisosRol")
-            {
-                dtgPermisos.Rows.Clear();
-                int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"]);
-                List<clsPermiso> permisos = new PermisoLogic().GetByRol(rolId);
-
-                if (permisos != null)
-                {
-                    FillDtgPermisos(permisos);
-                }
-                else
-                {
-                    //List<clsPermiso> allPermisos = new PermisoLogic().GetAll();
-                    FillDtgPermisos(new PermisoLogic().GetAll());
-                }
-            }
-        }
-
         private void FillDtgPermisos(List<clsPermiso>permisos)
         {
             foreach (clsPermiso permiso in permisos)
@@ -526,6 +505,26 @@ namespace UserInterfaceLayer
                 }
             }
 
+        }
+
+        private void dtgRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgRoles.Columns[e.ColumnIndex].Name == "permisosRol")
+            {
+                dtgPermisos.Rows.Clear();
+                int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"]);
+                List<clsPermiso> permisos = new PermisoLogic().GetByRol(rolId);
+
+                if (permisos != null)
+                {
+                    FillDtgPermisos(permisos);
+                }
+                else
+                {
+                    //List<clsPermiso> allPermisos = new PermisoLogic().GetAll();
+                    FillDtgPermisos(new PermisoLogic().GetAll());
+                }
+            }
         }
     }
 }
