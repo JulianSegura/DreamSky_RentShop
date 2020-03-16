@@ -31,7 +31,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblTelefonoRentas = new System.Windows.Forms.Label();
             this.lblPaisOrigenRentas = new System.Windows.Forms.Label();
@@ -64,13 +63,16 @@
             this.Separador = new Bunifu.Framework.UI.BunifuSeparator();
             this.label14 = new System.Windows.Forms.Label();
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
-            this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -110,11 +112,13 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.PaleGreen;
+            this.tabPage1.Controls.Add(this.btnGuardar);
+            this.tabPage1.Controls.Add(this.label17);
+            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.label16);
             this.tabPage1.Controls.Add(this.label13);
-            this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.textBox1);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.button1);
@@ -128,19 +132,6 @@
             this.tabPage1.Size = new System.Drawing.Size(892, 594);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Rentas";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(338, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 31);
-            this.button1.TabIndex = 111;
-            this.button1.Text = "Buscar";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // groupBox1
             // 
@@ -167,9 +158,9 @@
             this.groupBox1.Controls.Add(this.lblIdRentas);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(10, 43);
+            this.groupBox1.Location = new System.Drawing.Point(10, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(876, 232);
+            this.groupBox1.Size = new System.Drawing.Size(685, 230);
             this.groupBox1.TabIndex = 110;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Resultados:";
@@ -396,12 +387,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgRentasAbiertas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgRentasAbiertas.Location = new System.Drawing.Point(21, 432);
+            this.dtgRentasAbiertas.Location = new System.Drawing.Point(396, 280);
             this.dtgRentasAbiertas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgRentasAbiertas.Name = "dtgRentasAbiertas";
             this.dtgRentasAbiertas.RowHeadersWidth = 51;
             this.dtgRentasAbiertas.RowTemplate.Height = 24;
-            this.dtgRentasAbiertas.Size = new System.Drawing.Size(865, 157);
+            this.dtgRentasAbiertas.Size = new System.Drawing.Size(490, 308);
             this.dtgRentasAbiertas.TabIndex = 99;
             // 
             // tabPage2
@@ -490,24 +481,11 @@
             this.fileSystemWatcher1.EnableRaisingEvents = true;
             this.fileSystemWatcher1.SynchronizingObject = this;
             // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(390, 297);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 31);
-            this.button2.TabIndex = 114;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(176, 299);
+            this.textBox1.Location = new System.Drawing.Point(183, 299);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 27);
+            this.textBox1.Size = new System.Drawing.Size(149, 27);
             this.textBox1.TabIndex = 113;
             // 
             // label9
@@ -539,17 +517,69 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(176, 342);
+            this.dateTimePicker1.Location = new System.Drawing.Point(183, 342);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(207, 27);
             this.dateTimePicker1.TabIndex = 117;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(176, 375);
+            this.dateTimePicker2.Location = new System.Drawing.Point(183, 375);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(207, 27);
             this.dateTimePicker2.TabIndex = 118;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.PaleGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::UserInterfaceLayer.Properties.Resources.search;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(338, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(145, 37);
+            this.button1.TabIndex = 111;
+            this.button1.Text = "Buscar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.PaleGreen;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Image = global::UserInterfaceLayer.Properties.Resources.search;
+            this.button2.Location = new System.Drawing.Point(338, 294);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(52, 37);
+            this.button2.TabIndex = 119;
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 466);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(123, 20);
+            this.label17.TabIndex = 121;
+            this.label17.Text = "Seleccionados:";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.AccessibleRole = System.Windows.Forms.AccessibleRole.OutlineButton;
+            this.btnGuardar.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Location = new System.Drawing.Point(233, 557);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(136, 31);
+            this.btnGuardar.TabIndex = 122;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
             // 
             // frmRentas
             // 
@@ -622,8 +652,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button btnGuardar;
     }
 }

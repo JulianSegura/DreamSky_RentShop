@@ -693,7 +693,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgPermisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgPermisos.Location = new System.Drawing.Point(5, 214);
+            this.dtgPermisos.Location = new System.Drawing.Point(6, 264);
             this.dtgPermisos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgPermisos.MultiSelect = false;
             this.dtgPermisos.Name = "dtgPermisos";

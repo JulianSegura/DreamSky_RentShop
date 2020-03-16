@@ -33,7 +33,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cmbCategoriaProducto = new System.Windows.Forms.ComboBox();
             this.chkActivoProductos = new System.Windows.Forms.CheckBox();
             this.txtCosto = new System.Windows.Forms.TextBox();
@@ -51,14 +50,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtgInventario = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dtgInventario = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInventario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,20 +140,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Productos";
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.PaleGreen;
-            this.tabPage2.Controls.Add(this.btnBuscar);
-            this.tabPage2.Controls.Add(this.txtBuscar);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.dtgInventario);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(874, 542);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Inventario";
-            // 
             // cmbCategoriaProducto
             // 
             this.cmbCategoriaProducto.FormattingEnabled = true;
@@ -215,8 +201,8 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Silver;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNuevo.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Location = new System.Drawing.Point(6, 163);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -228,8 +214,8 @@
             // 
             // btnActualiza
             // 
-            this.btnActualiza.BackColor = System.Drawing.Color.Silver;
-            this.btnActualiza.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActualiza.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnActualiza.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnActualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualiza.Location = new System.Drawing.Point(286, 163);
             this.btnActualiza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -241,8 +227,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Silver;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGuardar.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Location = new System.Drawing.Point(146, 163);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -321,35 +307,19 @@
             this.label1.TabIndex = 93;
             this.label1.Text = "Nombre:";
             // 
-            // dtgInventario
+            // tabPage2
             // 
-            this.dtgInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dtgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgInventario.Location = new System.Drawing.Point(6, 62);
-            this.dtgInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dtgInventario.Name = "dtgInventario";
-            this.dtgInventario.RowHeadersWidth = 51;
-            this.dtgInventario.RowTemplate.Height = 24;
-            this.dtgInventario.Size = new System.Drawing.Size(862, 475);
-            this.dtgInventario.TabIndex = 100;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 17);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 20);
-            this.label7.TabIndex = 101;
-            this.label7.Text = "Buscar Inventario:";
-            // 
-            // txtBuscar
-            // 
-            this.txtBuscar.Location = new System.Drawing.Point(168, 14);
-            this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(188, 27);
-            this.txtBuscar.TabIndex = 102;
+            this.tabPage2.BackColor = System.Drawing.Color.PaleGreen;
+            this.tabPage2.Controls.Add(this.btnBuscar);
+            this.tabPage2.Controls.Add(this.txtBuscar);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.dtgInventario);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(874, 542);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Inventario";
             // 
             // btnBuscar
             // 
@@ -363,6 +333,36 @@
             this.btnBuscar.TabIndex = 103;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Location = new System.Drawing.Point(168, 14);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(188, 27);
+            this.txtBuscar.TabIndex = 102;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 17);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(145, 20);
+            this.label7.TabIndex = 101;
+            this.label7.Text = "Buscar Inventario:";
+            // 
+            // dtgInventario
+            // 
+            this.dtgInventario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dtgInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgInventario.Location = new System.Drawing.Point(6, 62);
+            this.dtgInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgInventario.Name = "dtgInventario";
+            this.dtgInventario.RowHeadersWidth = 51;
+            this.dtgInventario.RowTemplate.Height = 24;
+            this.dtgInventario.Size = new System.Drawing.Size(862, 475);
+            this.dtgInventario.TabIndex = 100;
             // 
             // frmProductos
             // 
@@ -381,9 +381,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgInventario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -58,9 +58,9 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.Separador = new Bunifu.Framework.UI.BunifuSeparator();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgClientes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher2)).BeginInit();
@@ -69,8 +69,8 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.BackColor = System.Drawing.Color.PaleGreen;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(704, 646);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -107,8 +107,8 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Silver;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGuardar.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Location = new System.Drawing.Point(16, 265);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -120,8 +120,8 @@
             // 
             // btnActualiza
             // 
-            this.btnActualiza.BackColor = System.Drawing.Color.Silver;
-            this.btnActualiza.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnActualiza.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnActualiza.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnActualiza.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualiza.Location = new System.Drawing.Point(302, 265);
             this.btnActualiza.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -521,8 +521,8 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.BackColor = System.Drawing.Color.Silver;
-            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNuevo.BackColor = System.Drawing.Color.PaleGreen;
+            this.btnNuevo.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Location = new System.Drawing.Point(160, 265);
             this.btnNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -531,19 +531,6 @@
             this.btnNuevo.TabIndex = 68;
             this.btnNuevo.Text = "Nuevo Registro";
             this.btnNuevo.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Silver;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::UserInterfaceLayer.Properties.Resources.zoom;
-            this.button5.Location = new System.Drawing.Point(373, 219);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(44, 42);
-            this.button5.TabIndex = 62;
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // label14
             // 
@@ -568,6 +555,19 @@
             this.Separador.TabIndex = 64;
             this.Separador.Transparency = 255;
             this.Separador.Vertical = false;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.PaleGreen;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Image = global::UserInterfaceLayer.Properties.Resources.search;
+            this.button5.Location = new System.Drawing.Point(373, 219);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(44, 42);
+            this.button5.TabIndex = 62;
+            this.button5.UseVisualStyleBackColor = false;
             // 
             // frmClientes
             // 
