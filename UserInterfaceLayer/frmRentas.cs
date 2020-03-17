@@ -32,5 +32,11 @@ namespace UserInterfaceLayer
         {
             _mainForm.EnableButtons();
         }
+
+        private void frmRentas_Load(object sender, EventArgs e)
+        {
+            dtpDesde.MinDate = DateTime.Today;
+            dtpHasta.MinDate = DateTime.Today;
+        }
     }
 }

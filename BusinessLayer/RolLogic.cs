@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Data;
 using DreamSkyEntities;
 using DataAccessLayer;
@@ -22,6 +21,7 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Activo", newRol.Activo));
                 parameters.Add(new DataParameter("@LimiteEmpleados", newRol.limiteEmpleados));
                 parameters.Add(new DataParameter("@LimiteEnDemanda", newRol.limiteEnDemanda));
+                
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspInsertRol", parameters);

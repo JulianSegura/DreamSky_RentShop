@@ -482,49 +482,59 @@ namespace UserInterfaceLayer
                 newRow.SetValues(permiso.Id, permiso.Formulario, permiso.Activo);
                 dtgPermisos.Rows.Add(newRow);
             }
-        }
-
-        #endregion
-
-        private void dtgRoles_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (dtgRoles.Columns[e.ColumnIndex].Name == "permisosRol")
-            {
-                dtgPermisos.Rows.Clear();
-                int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"]);
-                List<clsPermiso> permisos = new PermisoLogic().GetByRol(rolId);
-
-                if (permisos != null)
-                {
-                    FillDtgPermisos(permisos);
-                }
-                else
-                {
-                    //List<clsPermiso> allPermisos = new PermisoLogic().GetAll();
-                    FillDtgPermisos(new PermisoLogic().GetAll());
-                }
-            }
-
-        }
+        }    
 
         private void dtgRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //Traigo la lista de los permisos asociados al ROL o traigo la lista por default y la muestro
+        //en el DTGPermisos
         {
             if (dtgRoles.Columns[e.ColumnIndex].Name == "permisosRol")
             {
                 dtgPermisos.Rows.Clear();
-                int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"]);
+                int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"].Value);
                 List<clsPermiso> permisos = new PermisoLogic().GetByRol(rolId);
 
-                if (permisos != null)
+                if (permisos.Count != 0)
                 {
+                    btnAsociarPermisos.Text = "Actualizar";
                     FillDtgPermisos(permisos);
                 }
                 else
                 {
-                    //List<clsPermiso> allPermisos = new PermisoLogic().GetAll();
+                    btnAsociarPermisos.Text = "Asociar";
                     FillDtgPermisos(new PermisoLogic().GetAll());
                 }
             }
         }
+
+        private void btnAsociarPermisos_Click(object sender, EventArgs e)
+        //asociar permisos con el rol
+        {
+            List<int> permisosList = new List<int>();
+            string result="";
+
+            foreach (DataGridViewRow row in dtgPermisos.Rows)
+            {
+                if (Convert.ToBoolean(row.Cells["AsociadoPermiso"].Value)==true)
+                {
+                    permisosList.Add(Convert.ToInt32(row.Cells["PermisoId"].Value));
+                }
+            }
+            
+            int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"].Value);
+
+            if (btnAsociarPermisos.Text == "Asociar")
+            {
+                result = new PermisoLogic().AsociarARol("Insert", rolId, permisosList);
+            }
+            else
+            {
+                result = new PermisoLogic().AsociarARol("Update", rolId, permisosList);
+            }
+            
+            MessageBox.Show(result);
+        }
+        
+        #endregion
     }
 }

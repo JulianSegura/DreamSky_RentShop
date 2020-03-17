@@ -8,16 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using DreamSkyEntities;
+using BusinessLayer;
 
 namespace UserInterfaceLayer
 {
     public partial class Login : Form
     {
+        frmMain frmMain = new frmMain();
         public Login()
         {
             Thread Wait = new Thread(new ThreadStart(Presentacion));
-            frmMain frm = new frmMain();
-            frm.Show();
+            frmMain.Show();
             Wait.Start();
             Thread.Sleep(3000);
             InitializeComponent();
@@ -77,7 +79,28 @@ namespace UserInterfaceLayer
 
         private void btnLoginAcceder_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            string userName = txtLoginUsuario.Text.Trim();
+            string password = txtLoginPassword.Text.Trim();
+
+            clsUsuario user = new UsuarioLogic().Validate(userName, password);
+
+            if (user != null)
+            {
+                this.Hide();
+                frmMain.registeredUser = user;
+                frmMain.lblActualUser.Text = user.NombreCompleto;
+                frmMain.label3.Visible = true;
+                frmMain.lblActualUser.Visible = true;
+            }
+            else
+            {
+                MessageBox.Show("Usuario o Password Incorrecto");
+                txtLoginUsuario.Text = "";
+                txtLoginPassword.Text = "";
+                txtLoginUsuario_Leave(sender, e);
+                txtLoginPassword_Leave(sender, e);
+                txtLoginUsuario.Focus();
+            }
         }
     }
 }

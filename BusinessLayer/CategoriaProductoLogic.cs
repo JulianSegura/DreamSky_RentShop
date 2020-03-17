@@ -79,5 +79,19 @@ namespace BusinessLayer
             return list;
         }
 
+        public DataTable GetBasicInfo()
+        {
+            DataTable dt = new DataTable();
+            dt.Columns.Add("Id", typeof(int));
+            dt.Columns.Add("Nombre", typeof(string));
+            var lst = GetAll().Where(c => c.Activo == true);
+            dt.Rows.Add(0, "Seleccione");
+            foreach (clsCategoriaProducto cprod in lst)
+            {
+                dt.Rows.Add(cprod.Id, cprod.Nombre);
+            }
+            return dt;
+        }
+
     }
 }

@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DreamSkyEntities;
 
 namespace UserInterfaceLayer
 {
     public partial class frmMain : Form
     {
+        public clsUsuario registeredUser;
         public frmMain()
         {
             InitializeComponent();
+            if (registeredUser!=null) lblActualUser.Text = registeredUser.NombreCompleto;
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -189,7 +192,7 @@ namespace UserInterfaceLayer
 
         private void btnMainPerfil_Click(object sender, EventArgs e)
         {
-            var frmPerfil = new frmPerfil(this);
+            var frmPerfil = new frmPerfil(this,registeredUser);
             Formhijo(frmPerfil);
             btnMainRentas.Enabled = true;
             btnMainClientes.Enabled = true;

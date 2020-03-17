@@ -67,9 +67,13 @@
             this.NombreNCF = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ActivoNCF = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabRoles = new System.Windows.Forms.TabPage();
-            this.btnGuardaPermisos = new System.Windows.Forms.Button();
+            this.btnAsociarPermisos = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dtgPermisos = new System.Windows.Forms.DataGridView();
+            this.PermisoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormPermiso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PermisoActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.AsociadoPermiso = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.txtNombreRol = new System.Windows.Forms.TextBox();
             this.btnLimpiaRol = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -128,8 +132,8 @@
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(467, 424);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Location = new System.Drawing.Point(467, 427);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(122, 28);
             this.btnCerrar.TabIndex = 7;
@@ -172,9 +176,9 @@
             this.tabCategoria.ForeColor = System.Drawing.Color.Black;
             this.tabCategoria.ImageKey = "(none)";
             this.tabCategoria.Location = new System.Drawing.Point(4, 31);
-            this.tabCategoria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabCategoria.Margin = new System.Windows.Forms.Padding(2);
             this.tabCategoria.Name = "tabCategoria";
-            this.tabCategoria.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabCategoria.Padding = new System.Windows.Forms.Padding(2);
             this.tabCategoria.Size = new System.Drawing.Size(574, 374);
             this.tabCategoria.TabIndex = 1;
             this.tabCategoria.Text = "Categoria Producto";
@@ -186,7 +190,7 @@
             this.btnLimpiarCProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarCProducto.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarCProducto.Location = new System.Drawing.Point(377, 29);
-            this.btnLimpiarCProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarCProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarCProducto.Name = "btnLimpiarCProducto";
             this.btnLimpiarCProducto.Size = new System.Drawing.Size(85, 28);
             this.btnLimpiarCProducto.TabIndex = 23;
@@ -223,7 +227,7 @@
             this.chkCategoriaProducto.AutoSize = true;
             this.chkCategoriaProducto.ForeColor = System.Drawing.Color.Black;
             this.chkCategoriaProducto.Location = new System.Drawing.Point(199, 33);
-            this.chkCategoriaProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkCategoriaProducto.Margin = new System.Windows.Forms.Padding(2);
             this.chkCategoriaProducto.Name = "chkCategoriaProducto";
             this.chkCategoriaProducto.Size = new System.Drawing.Size(71, 23);
             this.chkCategoriaProducto.TabIndex = 2;
@@ -236,7 +240,7 @@
             this.btnActualizaCproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizaCproducto.ForeColor = System.Drawing.Color.Black;
             this.btnActualizaCproducto.Location = new System.Drawing.Point(377, 29);
-            this.btnActualizaCproducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizaCproducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizaCproducto.Name = "btnActualizaCproducto";
             this.btnActualizaCproducto.Size = new System.Drawing.Size(94, 28);
             this.btnActualizaCproducto.TabIndex = 4;
@@ -251,7 +255,7 @@
             this.btnGuardaCproducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaCproducto.ForeColor = System.Drawing.Color.Black;
             this.btnGuardaCproducto.Location = new System.Drawing.Point(278, 29);
-            this.btnGuardaCproducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardaCproducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardaCproducto.Name = "btnGuardaCproducto";
             this.btnGuardaCproducto.Size = new System.Drawing.Size(85, 28);
             this.btnGuardaCproducto.TabIndex = 3;
@@ -264,7 +268,7 @@
             this.txtCategoriaProducto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCategoriaProducto.Location = new System.Drawing.Point(76, 32);
-            this.txtCategoriaProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCategoriaProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoriaProducto.Name = "txtCategoriaProducto";
             this.txtCategoriaProducto.Size = new System.Drawing.Size(116, 23);
             this.txtCategoriaProducto.TabIndex = 1;
@@ -285,7 +289,7 @@
             this.Nombre,
             this.Activo});
             this.dtgCategoriaProducto.Location = new System.Drawing.Point(4, 63);
-            this.dtgCategoriaProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgCategoriaProducto.Margin = new System.Windows.Forms.Padding(2);
             this.dtgCategoriaProducto.MultiSelect = false;
             this.dtgCategoriaProducto.Name = "dtgCategoriaProducto";
             this.dtgCategoriaProducto.ReadOnly = true;
@@ -336,9 +340,9 @@
             this.tabIdentificacion.Controls.Add(this.dtgTipoIdentificacion);
             this.tabIdentificacion.ForeColor = System.Drawing.Color.Transparent;
             this.tabIdentificacion.Location = new System.Drawing.Point(4, 31);
-            this.tabIdentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.tabIdentificacion.Name = "tabIdentificacion";
-            this.tabIdentificacion.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabIdentificacion.Padding = new System.Windows.Forms.Padding(2);
             this.tabIdentificacion.Size = new System.Drawing.Size(574, 374);
             this.tabIdentificacion.TabIndex = 2;
             this.tabIdentificacion.Text = "Tipos de Identificación";
@@ -350,7 +354,7 @@
             this.btnLimpiarIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarIdentificacion.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarIdentificacion.Location = new System.Drawing.Point(377, 29);
-            this.btnLimpiarIdentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarIdentificacion.Name = "btnLimpiarIdentificacion";
             this.btnLimpiarIdentificacion.Size = new System.Drawing.Size(85, 28);
             this.btnLimpiarIdentificacion.TabIndex = 24;
@@ -387,7 +391,7 @@
             this.chkTipoIdentificacion.AutoSize = true;
             this.chkTipoIdentificacion.ForeColor = System.Drawing.Color.Black;
             this.chkTipoIdentificacion.Location = new System.Drawing.Point(199, 33);
-            this.chkTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.chkTipoIdentificacion.Name = "chkTipoIdentificacion";
             this.chkTipoIdentificacion.Size = new System.Drawing.Size(71, 23);
             this.chkTipoIdentificacion.TabIndex = 8;
@@ -400,7 +404,7 @@
             this.btnActualizarIdentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizarIdentificacion.ForeColor = System.Drawing.Color.Black;
             this.btnActualizarIdentificacion.Location = new System.Drawing.Point(377, 29);
-            this.btnActualizarIdentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizarIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizarIdentificacion.Name = "btnActualizarIdentificacion";
             this.btnActualizarIdentificacion.Size = new System.Drawing.Size(94, 28);
             this.btnActualizarIdentificacion.TabIndex = 10;
@@ -414,7 +418,7 @@
             this.btnGuardarIndentificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardarIndentificacion.ForeColor = System.Drawing.Color.Black;
             this.btnGuardarIndentificacion.Location = new System.Drawing.Point(278, 29);
-            this.btnGuardarIndentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarIndentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarIndentificacion.Name = "btnGuardarIndentificacion";
             this.btnGuardarIndentificacion.Size = new System.Drawing.Size(85, 28);
             this.btnGuardarIndentificacion.TabIndex = 9;
@@ -427,7 +431,7 @@
             this.txtTipoIdentificacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTipoIdentificacion.Location = new System.Drawing.Point(76, 32);
-            this.txtTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtTipoIdentificacion.Name = "txtTipoIdentificacion";
             this.txtTipoIdentificacion.Size = new System.Drawing.Size(116, 23);
             this.txtTipoIdentificacion.TabIndex = 7;
@@ -447,7 +451,7 @@
             this.IdIdentificacion,
             this.NombreIdentificacion,
             this.ActivoIdentificacion});
-            this.dtgTipoIdentificacion.Location = new System.Drawing.Point(3, 51);
+            this.dtgTipoIdentificacion.Location = new System.Drawing.Point(3, 61);
             this.dtgTipoIdentificacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtgTipoIdentificacion.Name = "dtgTipoIdentificacion";
             this.dtgTipoIdentificacion.ReadOnly = true;
@@ -456,7 +460,7 @@
             this.dtgTipoIdentificacion.RowTemplate.Height = 24;
             this.dtgTipoIdentificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgTipoIdentificacion.ShowCellToolTips = false;
-            this.dtgTipoIdentificacion.Size = new System.Drawing.Size(569, 304);
+            this.dtgTipoIdentificacion.Size = new System.Drawing.Size(569, 294);
             this.dtgTipoIdentificacion.TabIndex = 11;
             this.dtgTipoIdentificacion.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgTipoIdentifiacion_CellDoubleClick);
             this.dtgTipoIdentificacion.MouseHover += new System.EventHandler(this.dtgTipoIdentifiacion_MouseHover);
@@ -511,7 +515,7 @@
             this.btnLimpiarNCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiarNCF.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiarNCF.Location = new System.Drawing.Point(377, 29);
-            this.btnLimpiarNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiarNCF.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiarNCF.Name = "btnLimpiarNCF";
             this.btnLimpiarNCF.Size = new System.Drawing.Size(85, 28);
             this.btnLimpiarNCF.TabIndex = 25;
@@ -545,7 +549,7 @@
             this.chkNCF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.chkNCF.AutoSize = true;
             this.chkNCF.Location = new System.Drawing.Point(199, 33);
-            this.chkNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkNCF.Margin = new System.Windows.Forms.Padding(2);
             this.chkNCF.Name = "chkNCF";
             this.chkNCF.Size = new System.Drawing.Size(71, 23);
             this.chkNCF.TabIndex = 13;
@@ -557,7 +561,7 @@
             this.btnActualizaNCF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnActualizaNCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizaNCF.Location = new System.Drawing.Point(377, 29);
-            this.btnActualizaNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizaNCF.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizaNCF.Name = "btnActualizaNCF";
             this.btnActualizaNCF.Size = new System.Drawing.Size(94, 28);
             this.btnActualizaNCF.TabIndex = 15;
@@ -570,7 +574,7 @@
             this.btnGuardaNCF.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnGuardaNCF.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaNCF.Location = new System.Drawing.Point(278, 29);
-            this.btnGuardaNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardaNCF.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardaNCF.Name = "btnGuardaNCF";
             this.btnGuardaNCF.Size = new System.Drawing.Size(85, 28);
             this.btnGuardaNCF.TabIndex = 14;
@@ -583,7 +587,7 @@
             this.txtNCF.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNCF.Location = new System.Drawing.Point(76, 32);
-            this.txtNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNCF.Margin = new System.Windows.Forms.Padding(2);
             this.txtNCF.Name = "txtNCF";
             this.txtNCF.Size = new System.Drawing.Size(116, 23);
             this.txtNCF.TabIndex = 12;
@@ -604,7 +608,7 @@
             this.NombreNCF,
             this.ActivoNCF});
             this.dtgNCF.Location = new System.Drawing.Point(4, 63);
-            this.dtgNCF.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgNCF.Margin = new System.Windows.Forms.Padding(2);
             this.dtgNCF.MultiSelect = false;
             this.dtgNCF.Name = "dtgNCF";
             this.dtgNCF.ReadOnly = true;
@@ -646,7 +650,7 @@
             // tabRoles
             // 
             this.tabRoles.BackColor = System.Drawing.Color.PaleGreen;
-            this.tabRoles.Controls.Add(this.btnGuardaPermisos);
+            this.tabRoles.Controls.Add(this.btnAsociarPermisos);
             this.tabRoles.Controls.Add(this.label15);
             this.tabRoles.Controls.Add(this.dtgPermisos);
             this.tabRoles.Controls.Add(this.txtNombreRol);
@@ -664,17 +668,18 @@
             this.tabRoles.Text = "Roles y Permisos";
             this.tabRoles.Enter += new System.EventHandler(this.tabRoles_Enter);
             // 
-            // btnGuardaPermisos
+            // btnAsociarPermisos
             // 
-            this.btnGuardaPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGuardaPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardaPermisos.Location = new System.Drawing.Point(467, 343);
-            this.btnGuardaPermisos.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGuardaPermisos.Name = "btnGuardaPermisos";
-            this.btnGuardaPermisos.Size = new System.Drawing.Size(105, 29);
-            this.btnGuardaPermisos.TabIndex = 8;
-            this.btnGuardaPermisos.Text = "Asignar Permisos";
-            this.btnGuardaPermisos.UseVisualStyleBackColor = true;
+            this.btnAsociarPermisos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAsociarPermisos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsociarPermisos.Location = new System.Drawing.Point(467, 343);
+            this.btnAsociarPermisos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAsociarPermisos.Name = "btnAsociarPermisos";
+            this.btnAsociarPermisos.Size = new System.Drawing.Size(105, 29);
+            this.btnAsociarPermisos.TabIndex = 8;
+            this.btnAsociarPermisos.Text = "Asignar Permisos";
+            this.btnAsociarPermisos.UseVisualStyleBackColor = true;
+            this.btnAsociarPermisos.Click += new System.EventHandler(this.btnAsociarPermisos_Click);
             // 
             // label15
             // 
@@ -699,6 +704,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtgPermisos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgPermisos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgPermisos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PermisoId,
+            this.FormPermiso,
+            this.PermisoActivo,
+            this.AsociadoPermiso});
             this.dtgPermisos.Location = new System.Drawing.Point(5, 214);
             this.dtgPermisos.Margin = new System.Windows.Forms.Padding(2);
             this.dtgPermisos.MultiSelect = false;
@@ -711,12 +721,36 @@
             this.dtgPermisos.Size = new System.Drawing.Size(567, 128);
             this.dtgPermisos.TabIndex = 6;
             // 
+            // PermisoId
+            // 
+            this.PermisoId.HeaderText = "Id Permiso";
+            this.PermisoId.Name = "PermisoId";
+            this.PermisoId.ReadOnly = true;
+            this.PermisoId.Visible = false;
+            // 
+            // FormPermiso
+            // 
+            this.FormPermiso.HeaderText = "Formulario";
+            this.FormPermiso.Name = "FormPermiso";
+            this.FormPermiso.ReadOnly = true;
+            // 
+            // PermisoActivo
+            // 
+            this.PermisoActivo.HeaderText = "Activo";
+            this.PermisoActivo.Name = "PermisoActivo";
+            this.PermisoActivo.ReadOnly = true;
+            // 
+            // AsociadoPermiso
+            // 
+            this.AsociadoPermiso.HeaderText = "Asociado";
+            this.AsociadoPermiso.Name = "AsociadoPermiso";
+            // 
             // txtNombreRol
             // 
             this.txtNombreRol.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombreRol.Location = new System.Drawing.Point(43, 32);
-            this.txtNombreRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreRol.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreRol.Name = "txtNombreRol";
             this.txtNombreRol.Size = new System.Drawing.Size(149, 23);
             this.txtNombreRol.TabIndex = 0;
@@ -727,7 +761,7 @@
             this.btnLimpiaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiaRol.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiaRol.Location = new System.Drawing.Point(372, 29);
-            this.btnLimpiaRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiaRol.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiaRol.Name = "btnLimpiaRol";
             this.btnLimpiaRol.Size = new System.Drawing.Size(85, 26);
             this.btnLimpiaRol.TabIndex = 4;
@@ -764,7 +798,7 @@
             this.chkRol.AutoSize = true;
             this.chkRol.ForeColor = System.Drawing.Color.Black;
             this.chkRol.Location = new System.Drawing.Point(199, 33);
-            this.chkRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkRol.Margin = new System.Windows.Forms.Padding(2);
             this.chkRol.Name = "chkRol";
             this.chkRol.Size = new System.Drawing.Size(71, 23);
             this.chkRol.TabIndex = 1;
@@ -777,7 +811,7 @@
             this.btnActualizaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizaRol.ForeColor = System.Drawing.Color.Black;
             this.btnActualizaRol.Location = new System.Drawing.Point(372, 29);
-            this.btnActualizaRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizaRol.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizaRol.Name = "btnActualizaRol";
             this.btnActualizaRol.Size = new System.Drawing.Size(94, 26);
             this.btnActualizaRol.TabIndex = 3;
@@ -791,7 +825,7 @@
             this.btnGuardaRol.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaRol.ForeColor = System.Drawing.Color.Black;
             this.btnGuardaRol.Location = new System.Drawing.Point(274, 29);
-            this.btnGuardaRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardaRol.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardaRol.Name = "btnGuardaRol";
             this.btnGuardaRol.Size = new System.Drawing.Size(85, 26);
             this.btnGuardaRol.TabIndex = 2;
@@ -818,7 +852,7 @@
             this.activoRol,
             this.permisosRol});
             this.dtgRoles.Location = new System.Drawing.Point(4, 63);
-            this.dtgRoles.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgRoles.Margin = new System.Windows.Forms.Padding(2);
             this.dtgRoles.MultiSelect = false;
             this.dtgRoles.Name = "dtgRoles";
             this.dtgRoles.ReadOnly = true;
@@ -901,9 +935,9 @@
             this.tabUsuarios.Controls.Add(this.txtNombresUsuario);
             this.tabUsuarios.Controls.Add(this.dtgUsuario);
             this.tabUsuarios.Location = new System.Drawing.Point(4, 31);
-            this.tabUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.tabUsuarios.Name = "tabUsuarios";
-            this.tabUsuarios.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabUsuarios.Padding = new System.Windows.Forms.Padding(2);
             this.tabUsuarios.Size = new System.Drawing.Size(574, 374);
             this.tabUsuarios.TabIndex = 5;
             this.tabUsuarios.Text = "Administrar Usuarios";
@@ -915,7 +949,7 @@
             this.btnLimpiaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiaUsuario.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiaUsuario.Location = new System.Drawing.Point(341, 139);
-            this.btnLimpiaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiaUsuario.Name = "btnLimpiaUsuario";
             this.btnLimpiaUsuario.Size = new System.Drawing.Size(85, 28);
             this.btnLimpiaUsuario.TabIndex = 31;
@@ -940,7 +974,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbUserRol.FormattingEnabled = true;
             this.cmbUserRol.Location = new System.Drawing.Point(102, 141);
-            this.cmbUserRol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbUserRol.Margin = new System.Windows.Forms.Padding(2);
             this.cmbUserRol.Name = "cmbUserRol";
             this.cmbUserRol.Size = new System.Drawing.Size(130, 27);
             this.cmbUserRol.TabIndex = 26;
@@ -950,7 +984,7 @@
             this.txtPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPassword.Location = new System.Drawing.Point(102, 112);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(130, 23);
             this.txtPassword.TabIndex = 25;
@@ -971,7 +1005,7 @@
             this.txtUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtUsuario.Location = new System.Drawing.Point(102, 86);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(130, 23);
             this.txtUsuario.TabIndex = 23;
@@ -992,7 +1026,7 @@
             this.txtApellidosUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtApellidosUsuario.Location = new System.Drawing.Point(102, 59);
-            this.txtApellidosUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellidosUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellidosUsuario.Name = "txtApellidosUsuario";
             this.txtApellidosUsuario.Size = new System.Drawing.Size(130, 23);
             this.txtApellidosUsuario.TabIndex = 22;
@@ -1037,7 +1071,7 @@
             this.chkUsuario.AutoSize = true;
             this.chkUsuario.ForeColor = System.Drawing.Color.Black;
             this.chkUsuario.Location = new System.Drawing.Point(238, 92);
-            this.chkUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.chkUsuario.Name = "chkUsuario";
             this.chkUsuario.Size = new System.Drawing.Size(71, 23);
             this.chkUsuario.TabIndex = 24;
@@ -1050,7 +1084,7 @@
             this.btnActualizaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizaUsuario.ForeColor = System.Drawing.Color.Black;
             this.btnActualizaUsuario.Location = new System.Drawing.Point(243, 112);
-            this.btnActualizaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizaUsuario.Name = "btnActualizaUsuario";
             this.btnActualizaUsuario.Size = new System.Drawing.Size(94, 27);
             this.btnActualizaUsuario.TabIndex = 28;
@@ -1065,7 +1099,7 @@
             this.btnGuardaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardaUsuario.ForeColor = System.Drawing.Color.Black;
             this.btnGuardaUsuario.Location = new System.Drawing.Point(243, 140);
-            this.btnGuardaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardaUsuario.Name = "btnGuardaUsuario";
             this.btnGuardaUsuario.Size = new System.Drawing.Size(94, 27);
             this.btnGuardaUsuario.TabIndex = 27;
@@ -1078,7 +1112,7 @@
             this.txtNombresUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtNombresUsuario.Location = new System.Drawing.Point(102, 32);
-            this.txtNombresUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombresUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombresUsuario.Name = "txtNombresUsuario";
             this.txtNombresUsuario.Size = new System.Drawing.Size(130, 23);
             this.txtNombresUsuario.TabIndex = 21;
@@ -1101,7 +1135,7 @@
             this.FechaCreacionUsuario,
             this.ActivoUsuario});
             this.dtgUsuario.Location = new System.Drawing.Point(4, 187);
-            this.dtgUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.dtgUsuario.MultiSelect = false;
             this.dtgUsuario.Name = "dtgUsuario";
             this.dtgUsuario.ReadOnly = true;
@@ -1200,7 +1234,7 @@
             this.Controls.Add(this.tabControlMaestros);
             this.Controls.Add(this.btnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMaestros";
             this.Text = "Form3";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMaestros_FormClosing);
@@ -1304,10 +1338,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn limiteDemandaRol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoRol;
         private System.Windows.Forms.DataGridViewButtonColumn permisosRol;
-        private System.Windows.Forms.Button btnGuardaPermisos;
+        private System.Windows.Forms.Button btnAsociarPermisos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPermiso;
         private System.Windows.Forms.DataGridViewTextBoxColumn formularioPermiso;
         private System.Windows.Forms.DataGridViewCheckBoxColumn activoPermiso;
         private System.Windows.Forms.DataGridViewCheckBoxColumn asignarPermiso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PermisoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormPermiso;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn PermisoActivo;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn AsociadoPermiso;
     }
 }

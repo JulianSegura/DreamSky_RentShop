@@ -101,6 +101,7 @@ namespace BusinessLayer
             clsUsuario user = GetAll().Where(a => a.Id == userId).FirstOrDefault();
             return user;
         }
+
         public clsUsuario Validate(string userName,string password)
         
         /* consulto el userName en BD (listo)
@@ -135,12 +136,13 @@ namespace BusinessLayer
                 user.Id = Convert.ToInt32(dt.Rows[0]["Id"]);
                 user.Nombres = Convert.ToString(dt.Rows[0]["Nombres"]);
                 user.Apellidos = Convert.ToString(dt.Rows[0]["Apellidos"]);
-                user.Rol.Id = Convert.ToInt32(dt.Rows[0]["IdRol"]);
+                user.Idrol= Convert.ToInt32(dt.Rows[0]["IdRol"]);
                 user.Activo= Convert.ToBoolean(dt.Rows[0]["Activo"]);
                 user.fechaCreacion= Convert.ToDateTime(dt.Rows[0]["fechaCreacion"]);
-                
-                //consultar el rol y asignar permisos
 
+                //consultar el rol y asignar permisos
+                user.Rol = new RolLogic().GetAll().Where(r => r.Id == user.Idrol).FirstOrDefault();
+                user.Rol.Permisos = new PermisoLogic().GetByRol(user.Idrol);
             }
             
             return user;
