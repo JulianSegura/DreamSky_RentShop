@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DreamSkyEntities
 {
@@ -12,7 +10,7 @@ namespace DreamSkyEntities
         public string NombreCompleto { get => string.Format("{0} {1}", Nombres, Apellidos); }
         public string UserName { get; set; }
         public string Password { get; set; }
-        public int  Idrol { get; set; }
+        public int Idrol { get; set; }
         public clsRol Rol { get; set; }
         public bool Activo { get; set; }
         public DateTime fechaCreacion { get; set; }

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BusinessLayer;
+﻿using BusinessLayer;
 using DreamSkyEntities;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
@@ -37,7 +33,7 @@ namespace UserInterfaceLayer
             _mainForm.EnableButtons();
         }
 
-        private void fillCombos(ref ComboBox cb,DataTable dt)
+        private void fillCombos(ref ComboBox cb, DataTable dt)
         {
             cb.DataSource = dt;
             cb.ValueMember = dt.Columns[0].ToString();
@@ -84,7 +80,7 @@ namespace UserInterfaceLayer
             string codProducto = txtCodeProducto.Text.Trim();
             string nombreProducto = txtNombreProducto.Text.Trim();
             string descProducto = txtDescripcion.Text.Trim();
-            double costoProducto = double.Parse(txtCosto.Text.Trim(),System.Globalization.NumberStyles.Currency);
+            double costoProducto = double.Parse(txtCosto.Text.Trim(), System.Globalization.NumberStyles.Currency);
             int catProducto = Convert.ToInt32(cmbCategoriaProducto.SelectedValue);
             bool activo = chkActivoProductos.Checked;
 
@@ -138,7 +134,7 @@ namespace UserInterfaceLayer
             int productId = Convert.ToInt32(dtgProductos.SelectedRows[0].Cells["IdProducto"].Value);
             clsProducto productToModify = new ProductoLogic().GetById(productId);
 
-            if (productToModify==null)
+            if (productToModify == null)
             {
                 MessageBox.Show("Seleccione un producto a modificar");
                 return;
@@ -167,7 +163,7 @@ namespace UserInterfaceLayer
                 row.CreateCells(dtgProductos);
                 row.SetValues(product.Id, product.codigoProducto, product.Nombre, product.CategoriaProducto,
                     new CategoriaProductoLogic().GetAll().Where(c => c.Id == product.CategoriaProducto).FirstOrDefault().Nombre,
-                    string.Format("{0:C}",product.costoAlquiler),product.Activo
+                    string.Format("{0:C}", product.costoAlquiler), product.Activo
                     );
                 dtgProductos.Rows.Add(row);
             }
@@ -189,7 +185,7 @@ namespace UserInterfaceLayer
 
             clsProducto productToUpdate = new clsProducto
             {
-                Id=idProducto,
+                Id = idProducto,
                 codigoProducto = codProducto,
                 Nombre = nombreProducto,
                 Descripcion = descProducto,
@@ -213,15 +209,15 @@ namespace UserInterfaceLayer
             List<clsInventario> inventario = new InventoryLogic().GetAll();
             List<string> searchSource = new List<string>();
 
-            foreach(clsInventario inventoryLine in inventario)
+            foreach (clsInventario inventoryLine in inventario)
             {
                 inventoryLine.Producto = new ProductoLogic().GetAll().Where(p => p.codigoProducto == inventoryLine.CodigoProducto).FirstOrDefault();
                 inventoryLine.CategoriaProducto = new CategoriaProductoLogic().GetAll().Where(c => c.Id == inventoryLine.Producto.CategoriaProducto).FirstOrDefault();
                 DataGridViewRow newRow = new DataGridViewRow();
                 newRow.CreateCells(dtgInventario);
                 newRow.SetValues(inventoryLine.CodigoProducto, inventoryLine.CategoriaProducto.Nombre, inventoryLine.Producto.Nombre,
-                    inventoryLine.Disponible,string.Format("{0:C}",inventoryLine.Producto.costoAlquiler),
-                    string.Format("{0:c}",inventoryLine.Disponible*inventoryLine.Producto.costoAlquiler));
+                    inventoryLine.Disponible, string.Format("{0:C}", inventoryLine.Producto.costoAlquiler),
+                    string.Format("{0:c}", inventoryLine.Disponible * inventoryLine.Producto.costoAlquiler));
 
                 dtgInventario.Rows.Add(newRow);
                 searchSource.Add(inventoryLine.CodigoProducto);
@@ -254,7 +250,6 @@ namespace UserInterfaceLayer
             dtgInventario.Rows.Add(newRow);
 
         }
-
 
         private void cmbBuscar_KeyPress(object sender, KeyPressEventArgs e)
         {

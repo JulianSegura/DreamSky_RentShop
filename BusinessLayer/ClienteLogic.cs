@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
-using DataAccessLayer;
-using System.Linq;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace BusinessLayer
 {
@@ -67,9 +66,9 @@ namespace BusinessLayer
             catch (Exception ex)
             {
 
-                result=ex.Message;
+                result = ex.Message;
             }
-            
+
             return result;
 
         }
@@ -86,29 +85,29 @@ namespace BusinessLayer
                        Apellidos = row["Apellidos"].ToString(),
                        TipoIdentificacion = Convert.ToInt32(row["IdTipoIdentificacion"]),
                        Identificacion = row["Identificacion"].ToString(),
-                       Activo=Convert.ToBoolean(row["Activo"]),
-                       FechaCreacion=Convert.ToDateTime(row["FechaCreacion"]),
-                       Telefono=row["Telefono"].ToString(),
-                       Celular=row["Celular"].ToString(),
-                       Direccion=row["Direccion"].ToString(),
-                       Nacionalidad=row["Nacionalidad"].ToString()
+                       Activo = Convert.ToBoolean(row["Activo"]),
+                       FechaCreacion = Convert.ToDateTime(row["FechaCreacion"]),
+                       Telefono = row["Telefono"].ToString(),
+                       Celular = row["Celular"].ToString(),
+                       Direccion = row["Direccion"].ToString(),
+                       Nacionalidad = row["Nacionalidad"].ToString()
                    }).ToList();
 
             return lst;
         }
-        public clsCliente GetById(string identificacion="",int customerId=0)
+        public clsCliente GetById(string identificacion = "", int customerId = 0)
         {
             clsCliente customer = new clsCliente();
-            
+
             if (identificacion != "")
             {
-                customer=GetAll().Where(c => c.Identificacion == identificacion).FirstOrDefault();
+                customer = GetAll().Where(c => c.Identificacion == identificacion).FirstOrDefault();
             }
-            else if (customerId!=0)
+            else if (customerId != 0)
             {
-                customer= GetAll().Where(c => c.Id == customerId).FirstOrDefault();
+                customer = GetAll().Where(c => c.Id == customerId).FirstOrDefault();
             }
-            
+
             return customer;
         }
     }

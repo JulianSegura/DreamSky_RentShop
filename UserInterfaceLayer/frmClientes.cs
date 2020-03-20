@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessLayer;
 using DreamSkyEntities;
-using BusinessLayer;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
@@ -17,7 +12,7 @@ namespace UserInterfaceLayer
 
         #region Shared_Mainform
         private frmMain _mainForm;
-     
+
         public frmClientes()
         {
             InitializeComponent();
@@ -35,7 +30,7 @@ namespace UserInterfaceLayer
 
         private void Form4_FormClosing(object sender, FormClosingEventArgs e)
         {
-           
+
             _mainForm.EnableButtons();
         }
 
@@ -60,7 +55,7 @@ namespace UserInterfaceLayer
 
         private bool emptyFields()
         {
-            if (txtNombre.Text.Trim()=="")
+            if (txtNombre.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese NOMBRE(S) del cliente");
                 return true;
@@ -70,7 +65,7 @@ namespace UserInterfaceLayer
                 MessageBox.Show("Ingrese APELLIDO(S) del cliente");
                 return true;
             }
-            if (cmbTipoIdentificacion.SelectedIndex==0)
+            if (cmbTipoIdentificacion.SelectedIndex == 0)
             {
                 MessageBox.Show("Seleccione TIPO IDENTIFICACION");
                 return true;
@@ -80,7 +75,7 @@ namespace UserInterfaceLayer
                 MessageBox.Show("Ingrese IDENTIFICACION del cliente");
                 return true;
             }
-            if (txtCelular.Text.Trim() == ""&txtTelefono.Text.Trim()=="")
+            if (txtCelular.Text.Trim() == "" & txtTelefono.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese CELULAR O TELEFONO del cliente");
                 return true;
@@ -94,7 +89,7 @@ namespace UserInterfaceLayer
         {
             lblIdCliente.Text = ".....";
             DataTable dt = new TipoIdentificacionLogic().GetBasicInfo();
-            
+
             cmbTipoIdentificacion.DataSource = dt;
             cmbTipoIdentificacion.ValueMember = dt.Columns["Id"].ToString();
             cmbTipoIdentificacion.DisplayMember = dt.Columns["Nombre"].ToString();
@@ -155,16 +150,16 @@ namespace UserInterfaceLayer
             updateCustomer.Telefono = txtTelefono.Text.Trim();
             updateCustomer.Correo = txtCorreo.Text.Trim();
             updateCustomer.Direccion = txtDireccion.Text.Trim();
-            
+
             string result = new ClienteLogic().Update(updateCustomer);
             MessageBox.Show(result);
-            frmClientes_Load(sender,e);
+            frmClientes_Load(sender, e);
         }
 
         private void dtgClientes_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int customerId = Convert.ToInt32(dtgClientes.SelectedRows[0].Cells[0].Value);
-            clsCliente updateCustomer = new ClienteLogic().GetById("",customerId);
+            clsCliente updateCustomer = new ClienteLogic().GetById("", customerId);
 
             lblIdCliente.Text = updateCustomer.Id.ToString();
             chkActivo.Checked = updateCustomer.Activo;
@@ -190,6 +185,6 @@ namespace UserInterfaceLayer
             foundCustomers.Add(new ClienteLogic().GetById(customerId));
             dtgClientes.DataSource = foundCustomers;
         }
-    } 
+    }
 }
 

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
-using DataAccessLayer;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text;
 
 namespace BusinessLayer
 {
@@ -27,7 +27,7 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Password", EncodeText(newUser.Password)));
                 parameters.Add(new DataParameter("@IdRol", newUser.Idrol));
                 parameters.Add(new DataParameter("@Activo", newUser.Activo));
-                
+
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
@@ -59,7 +59,7 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@Password", EncodeText(user.Password)));
                 parameters.Add(new DataParameter("@IdRol", user.Idrol));
                 parameters.Add(new DataParameter("@Estado", user.Activo));
-                
+
                 //parametros de salida
                 parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
@@ -74,11 +74,11 @@ namespace BusinessLayer
 
             return result;
         }
-        
+
         public List<clsUsuario> GetAll()
         {
             List<clsUsuario> lst = new List<clsUsuario>();
-            DataTable dt=dataManager.ExecuteQuery("uspGetAllUsers", null);
+            DataTable dt = dataManager.ExecuteQuery("uspGetAllUsers", null);
 
             lst = (from DataRow row in dt.Rows
                    select new clsUsuario
@@ -88,7 +88,7 @@ namespace BusinessLayer
                        Apellidos = row["Apellidos"].ToString(),
                        UserName = row["Usuario"].ToString(),
                        Idrol = Convert.ToInt32(row["IdRol"]),
-                       Rol = new RolLogic().GetAll().Where(r=>r.Id== Convert.ToInt32(row["IdRol"])).FirstOrDefault(),
+                       Rol = new RolLogic().GetAll().Where(r => r.Id == Convert.ToInt32(row["IdRol"])).FirstOrDefault(),
                        fechaCreacion = Convert.ToDateTime(row["FechaCreacion"]),
                        Activo = Convert.ToBoolean(row["Activo"])
                    }).ToList();
@@ -102,14 +102,14 @@ namespace BusinessLayer
             return user;
         }
 
-        public clsUsuario Validate(string userName,string password)
-        
+        public clsUsuario Validate(string userName, string password)
+
         /* consulto el userName en BD (listo)
          * si existe, traigo el user completo (listo)
          * verifico el rolId y creo la entidad Rol , la entidad Rol trae los permisos.*/
         {
             DataTable dt;
-            clsUsuario user= new clsUsuario();
+            clsUsuario user = new clsUsuario();
             List<DataParameter> parameters = new List<DataParameter>();
 
             try
@@ -117,9 +117,9 @@ namespace BusinessLayer
                 //Parametros de entrada
                 parameters.Add(new DataParameter("@Usuario", userName));
                 parameters.Add(new DataParameter("@Password", EncodeText(password)));
-                
-                dt= dataManager.ExecuteQuery("uspGetUserByUserName", parameters);
-                
+
+                dt = dataManager.ExecuteQuery("uspGetUserByUserName", parameters);
+
             }
             catch (Exception ex)
             {
@@ -136,17 +136,17 @@ namespace BusinessLayer
                 user.Id = Convert.ToInt32(dt.Rows[0]["Id"]);
                 user.Nombres = Convert.ToString(dt.Rows[0]["Nombres"]);
                 user.Apellidos = Convert.ToString(dt.Rows[0]["Apellidos"]);
-                user.Idrol= Convert.ToInt32(dt.Rows[0]["IdRol"]);
-                user.Activo= Convert.ToBoolean(dt.Rows[0]["Activo"]);
-                user.fechaCreacion= Convert.ToDateTime(dt.Rows[0]["fechaCreacion"]);
+                user.Idrol = Convert.ToInt32(dt.Rows[0]["IdRol"]);
+                user.Activo = Convert.ToBoolean(dt.Rows[0]["Activo"]);
+                user.fechaCreacion = Convert.ToDateTime(dt.Rows[0]["fechaCreacion"]);
 
                 //consultar el rol y asignar permisos
                 user.Rol = new RolLogic().GetAll().Where(r => r.Id == user.Idrol).FirstOrDefault();
                 user.Rol.Permisos = new PermisoLogic().GetByRol(user.Idrol);
             }
-            
+
             return user;
-        } 
+        }
 
         private string EncodeText(string textToEncode)
         {

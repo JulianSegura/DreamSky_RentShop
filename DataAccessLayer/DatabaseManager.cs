@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Configuration;
 
 namespace DataAccessLayer
 {
@@ -31,15 +30,16 @@ namespace DataAccessLayer
         }
 
         //Metodo para ejecuar Store Procedure(Insert, Update, Delete)
-        public void ExecuteStoreProc(string storeProcName,List<DataParameter>parameters)
+        public void ExecuteStoreProc(string storeProcName, List<DataParameter> parameters)
         {
             SqlCommand command;
             try
             {
                 OpenConnection();
+
                 command = new SqlCommand(storeProcName, Connection);
                 command.CommandType = CommandType.StoredProcedure;
-                
+
                 //Agregamos los parametros al Store Procedure
                 if (parameters != null)
                 {
@@ -47,16 +47,14 @@ namespace DataAccessLayer
                     {
                         if (parameter.Direction == ParameterDirection.Input)
                         {
-                            command.Parameters.AddWithValue(parameter.Name,parameter.Value);
+                            command.Parameters.AddWithValue(parameter.Name, parameter.Value);
                         }
                         if (parameter.Direction == ParameterDirection.Output)
                         {
                             command.Parameters.Add(parameter.Name, parameter.DataType, parameter.Size).Direction = ParameterDirection.Output;
                         }
                     }
-                    
                     command.ExecuteNonQuery();
-                    CloseConnection();
 
                     //Leemos la informacion que retorna el Store Procedure
                     foreach (DataParameter outputParameter in parameters)
@@ -70,26 +68,27 @@ namespace DataAccessLayer
                         }
                     }
 
+                    CloseConnection();
                 }
             }
+
             catch (Exception ex)
             {
-
                 throw ex;
             }
-            
+
         }
 
         //Metodo para consultas (Select -- From)
         public DataTable ExecuteQuery(string storeProcName, List<DataParameter> parameters)
         {
-            DataTable dt=new DataTable();
+            DataTable dt = new DataTable();
 
             try
             {
                 SqlDataAdapter da = new SqlDataAdapter(storeProcName, Connection);
                 da.SelectCommand.CommandType = CommandType.StoredProcedure;
-                
+
                 //Agregamos los parametros en caso de que hayan
                 if (parameters != null)
                 {
@@ -103,7 +102,7 @@ namespace DataAccessLayer
             catch (Exception ex)
             {
 
-               //throw ex;
+                //throw ex;
             }
 
             return dt;

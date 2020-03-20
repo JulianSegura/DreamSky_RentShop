@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DreamSkyEntities
 {
-    public  class clsCliente
+    public class clsCliente
     {
         public int Id { get; set; }
         public string Nombres { get; set; }

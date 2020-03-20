@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
-using DataAccessLayer;
-using System.Linq;
+using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 namespace BusinessLayer
 {
@@ -25,7 +25,7 @@ namespace BusinessLayer
             return lst;
         }
 
-        public List<clsPermiso>GetByRol(int rolID)
+        public List<clsPermiso> GetByRol(int rolID)
         {
             List<clsPermiso> lst = new List<clsPermiso>();
             DataTable dt = dataManager.ExecuteQuery("uspGetAllPermisosRoles", null);
@@ -39,18 +39,18 @@ namespace BusinessLayer
                 }
             }
 
-            return lst.Where(p=>p.Activo==true).ToList();
+            return lst.Where(p => p.Activo == true).ToList();
         }
 
-        public string AsociarARol(string operacion,int rolId,List<int>permisos)
+        public string AsociarARol(string operacion, int rolId, List<int> permisos)
         {
-            string result="";
+            string result = "";
             List<DataParameter> parameters = new List<DataParameter>();
 
             foreach (int permiso in permisos)
             {
                 parameters.Clear();
-             
+
                 try
                 {
                     parameters.Add(new DataParameter("@Operacion", operacion));
@@ -63,12 +63,12 @@ namespace BusinessLayer
                     }
 
                     dataManager.ExecuteStoreProc("uspAsignarPermisosRol", parameters);
-                    
+
                 }
                 catch (Exception ex)
                 {
 
-                    result=ex.Message;
+                    result = ex.Message;
                 }
             }
 

@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using DreamSkyEntities;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DreamSkyEntities;
 
 namespace UserInterfaceLayer
 {
@@ -17,7 +11,7 @@ namespace UserInterfaceLayer
         public frmMain()
         {
             InitializeComponent();
-            if (registeredUser!=null) lblActualUser.Text = registeredUser.NombreCompleto;
+            if (registeredUser != null) lblActualUser.Text = registeredUser.NombreCompleto;
         }
 
         private void Salir_Click(object sender, EventArgs e)
@@ -46,7 +40,7 @@ namespace UserInterfaceLayer
 
         private void Menusidebar_Click(object sender, EventArgs e)
         {
-            if(Sidebar.Width > 200)
+            if (Sidebar.Width > 200)
             {
                 Sidebar.Visible = false;
                 Sidebar.Width = 45;
@@ -66,7 +60,7 @@ namespace UserInterfaceLayer
                 AnimacionSider2.Show(Sidebar);
                 label1.Text = "OCULTAR MENÚ";
             }
-                                                      
+
         }
 
         private Form activeForm = null;
@@ -192,7 +186,7 @@ namespace UserInterfaceLayer
 
         private void btnMainPerfil_Click(object sender, EventArgs e)
         {
-            var frmPerfil = new frmPerfil(this,registeredUser);
+            var frmPerfil = new frmPerfil(this, registeredUser);
             Formhijo(frmPerfil);
             btnMainRentas.Enabled = true;
             btnMainClientes.Enabled = true;

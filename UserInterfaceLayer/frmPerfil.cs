@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessLayer;
 using DreamSkyEntities;
-using BusinessLayer;
+using System;
+using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
@@ -20,10 +13,10 @@ namespace UserInterfaceLayer
         {
             InitializeComponent();
         }
-        public frmPerfil(frmMain mainForm,clsUsuario User)
+        public frmPerfil(frmMain mainForm, clsUsuario User)
         {
             InitializeComponent();
-            _mainForm =  mainForm;
+            _mainForm = mainForm;
             _currentUser = User;
             lblNombre.Text = _currentUser.Nombres;
             lblApellido.Text = _currentUser.Apellidos;
@@ -70,7 +63,7 @@ namespace UserInterfaceLayer
                 lblPassword1.Visible = false;
                 lblPassword2.Visible = false;
             }
-                
+
         }
     }
 }

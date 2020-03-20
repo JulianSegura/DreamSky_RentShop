@@ -101,7 +101,7 @@ namespace UserInterfaceLayer
 
         }
 
-         private void dtgCategoriaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtgCategoriaProducto_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         //Metodo para cargar informacion a actualizar
         {
             txtCategoriaProducto.Text = Convert.ToString(dtgCategoriaProducto.SelectedRows[0].Cells["Nombre"].Value);
@@ -289,7 +289,7 @@ namespace UserInterfaceLayer
             {
                 DataGridViewRow dtgRow = new DataGridViewRow();
                 dtgRow.CreateCells(dtgUsuario);
-                dtgRow.SetValues(usuario.Id, usuario.NombreCompleto, usuario.Rol.Nombre,usuario.fechaCreacion.ToString(),usuario.Activo);
+                dtgRow.SetValues(usuario.Id, usuario.NombreCompleto, usuario.Rol.Nombre, usuario.fechaCreacion.ToString(), usuario.Activo);
                 dtgUsuario.Rows.Add(dtgRow);
             }
             dtgUsuario.ClearSelection();
@@ -307,7 +307,7 @@ namespace UserInterfaceLayer
             string password = txtPassword.Text;
             bool active = chkUsuario.Checked;
             int rolId = Convert.ToInt32(cmbUserRol.SelectedValue);
-            clsUsuario newUser = new clsUsuario() { Nombres = Names, Apellidos = lastNames, UserName = userName, Password = password, Activo = active,Idrol=rolId };
+            clsUsuario newUser = new clsUsuario() { Nombres = Names, Apellidos = lastNames, UserName = userName, Password = password, Activo = active, Idrol = rolId };
 
             string result = new UsuarioLogic().Insert(newUser);
             MessageBox.Show(result);
@@ -322,9 +322,16 @@ namespace UserInterfaceLayer
             string password = txtPassword.Text;
             bool active = chkUsuario.Checked;
             int rolId = Convert.ToInt32(cmbUserRol.SelectedValue);
-            clsUsuario userToModify = new clsUsuario() { Id = Convert.ToInt32(dtgUsuario.SelectedRows[0].Cells["IdUsuario"].Value),
-                                                         Nombres = Names, Apellidos = lastNames, UserName = userName, Password = password,
-                                                         Activo = active, Idrol = rolId };
+            clsUsuario userToModify = new clsUsuario()
+            {
+                Id = Convert.ToInt32(dtgUsuario.SelectedRows[0].Cells["IdUsuario"].Value),
+                Nombres = Names,
+                Apellidos = lastNames,
+                UserName = userName,
+                Password = password,
+                Activo = active,
+                Idrol = rolId
+            };
 
             string result = new UsuarioLogic().Update(userToModify);
             MessageBox.Show(result);
@@ -359,7 +366,7 @@ namespace UserInterfaceLayer
             btnActualizaUsuario.Visible = true;
             btnActualizaUsuario.Location = btnGuardaUsuario.Location;
         }
-       
+
         private bool emptyUserFields()
         {
             if (txtNombresUsuario.Text.Trim() == "")
@@ -382,7 +389,7 @@ namespace UserInterfaceLayer
                 MessageBox.Show("Ingrese CONTRASEÑA");
                 return true;
             }
-            if (Convert.ToInt32(cmbUserRol.SelectedValue)==0)
+            if (Convert.ToInt32(cmbUserRol.SelectedValue) == 0)
             {
                 MessageBox.Show("Elija un ROL de usuario");
                 return true;
@@ -392,7 +399,7 @@ namespace UserInterfaceLayer
         #endregion
 
         #region Codigo_Para: Tab_Roles_y_Permisos
-        
+
         private void dtgRoles_MouseHover(object sender, EventArgs e)
         {
             ToolTip usuarioToolTip = new ToolTip();
@@ -432,7 +439,7 @@ namespace UserInterfaceLayer
         {
             tabRoles_Enter(sender, e);
         }
-       
+
         private void btnGuardaRol_Click(object sender, EventArgs e)
         {
             if (txtNombreRol.Text.Trim() == string.Empty)
@@ -449,7 +456,7 @@ namespace UserInterfaceLayer
             MessageBox.Show(result);
             tabRoles_Enter(sender, e);
         }
-       
+
         private void btnActualizaRol_Click(object sender, EventArgs e)
         {
             if (txtNombreRol.Text.Trim() == string.Empty)
@@ -463,8 +470,8 @@ namespace UserInterfaceLayer
             string name = txtNombreRol.Text.Trim();
             bool activo = chkRol.Checked;
             rolToModify.Id = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"].Value);
-            rolToModify.limiteEmpleados= Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteEmpleadosRol"].Value);
-            rolToModify.limiteEnDemanda= Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteDemandaRol"].Value);
+            rolToModify.limiteEmpleados = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteEmpleadosRol"].Value);
+            rolToModify.limiteEnDemanda = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["limiteDemandaRol"].Value);
             rolToModify.Nombre = name;
             rolToModify.Activo = activo;
 
@@ -473,7 +480,7 @@ namespace UserInterfaceLayer
             tabRoles_Enter(sender, e);
         }
 
-        private void FillDtgPermisos(List<clsPermiso>permisos)
+        private void FillDtgPermisos(List<clsPermiso> permisos)
         {
             foreach (clsPermiso permiso in permisos)
             {
@@ -482,7 +489,7 @@ namespace UserInterfaceLayer
                 newRow.SetValues(permiso.Id, permiso.Formulario, permiso.Activo);
                 dtgPermisos.Rows.Add(newRow);
             }
-        }    
+        }
 
         private void dtgRoles_CellContentClick(object sender, DataGridViewCellEventArgs e)
         //Traigo la lista de los permisos asociados al ROL o traigo la lista por default y la muestro
@@ -511,16 +518,16 @@ namespace UserInterfaceLayer
         //asociar permisos con el rol
         {
             List<int> permisosList = new List<int>();
-            string result="";
+            string result = "";
 
             foreach (DataGridViewRow row in dtgPermisos.Rows)
             {
-                if (Convert.ToBoolean(row.Cells["AsociadoPermiso"].Value)==true)
+                if (Convert.ToBoolean(row.Cells["AsociadoPermiso"].Value) == true)
                 {
                     permisosList.Add(Convert.ToInt32(row.Cells["PermisoId"].Value));
                 }
             }
-            
+
             int rolId = Convert.ToInt32(dtgRoles.SelectedRows[0].Cells["IdRol"].Value);
 
             if (btnAsociarPermisos.Text == "Asociar")
@@ -531,10 +538,10 @@ namespace UserInterfaceLayer
             {
                 result = new PermisoLogic().AsociarARol("Update", rolId, permisosList);
             }
-            
+
             MessageBox.Show(result);
         }
-        
+
         #endregion
     }
 }

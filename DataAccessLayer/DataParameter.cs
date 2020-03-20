@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Data;//se debe agregar este Using porque vamos a trabajar con datos
+﻿using System.Data;//se debe agregar este Using porque vamos a trabajar con datos
 
 namespace DataAccessLayer
 {
@@ -25,7 +22,7 @@ namespace DataAccessLayer
         }
         //Parametros de salida en SQL
 
-        public DataParameter(string _name,SqlDbType _datatype,int _size)
+        public DataParameter(string _name, SqlDbType _datatype, int _size)
         {
             Name = _name;
             DataType = _datatype;

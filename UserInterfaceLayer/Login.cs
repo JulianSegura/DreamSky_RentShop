@@ -1,15 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Threading;
+﻿using BusinessLayer;
 using DreamSkyEntities;
-using BusinessLayer;
+using System;
+using System.Drawing;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace UserInterfaceLayer
 {
@@ -39,7 +33,7 @@ namespace UserInterfaceLayer
         #region PlaceHolders
         private void txtLoginUsuario_Enter(object sender, EventArgs e)
         {
-            if(txtLoginUsuario.Text == "USUARIO")
+            if (txtLoginUsuario.Text == "USUARIO")
             {
                 txtLoginUsuario.Text = "";
                 txtLoginUsuario.ForeColor = Color.White;

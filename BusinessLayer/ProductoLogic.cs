@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
-using DataAccessLayer;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -21,11 +20,11 @@ namespace BusinessLayer
                    {
                        Id = Convert.ToInt32(row["Id"]),
                        codigoProducto = row["CodigoProducto"].ToString(),
-                       Nombre=row["Nombre"].ToString(),
-                       Descripcion=row["Descripcion"].ToString(),
-                       CategoriaProducto=Convert.ToInt32(row["IdCategoria"]),
-                       costoAlquiler=Convert.ToDouble(row["CostoAlquiler"]),
-                       Activo=Convert.ToBoolean(row["Activo"])
+                       Nombre = row["Nombre"].ToString(),
+                       Descripcion = row["Descripcion"].ToString(),
+                       CategoriaProducto = Convert.ToInt32(row["IdCategoria"]),
+                       costoAlquiler = Convert.ToDouble(row["CostoAlquiler"]),
+                       Activo = Convert.ToBoolean(row["Activo"])
                    }).ToList();
             return lst;
         }
@@ -50,7 +49,7 @@ namespace BusinessLayer
                 parameters.Add(new DataParameter("@CostoAlquiler", newProducto.costoAlquiler));
                 parameters.Add(new DataParameter("@activo", newProducto.Activo));
 
-                parameters.Add(new DataParameter("@Resultado",SqlDbType.VarChar,100));
+                parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspInsertProducto", parameters);
                 result = parameters[6].Value.ToString();
@@ -59,12 +58,12 @@ namespace BusinessLayer
             catch (Exception e)
             {
 
-                result= e.Message;
+                result = e.Message;
             }
             return result;
         }
 
-        public string Update (clsProducto productToUpdate)
+        public string Update(clsProducto productToUpdate)
         {
             string result = "";
             List<DataParameter> parameters = new List<DataParameter>();

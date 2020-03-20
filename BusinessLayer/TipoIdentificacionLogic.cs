@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
-using DataAccessLayer;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -20,7 +19,7 @@ namespace BusinessLayer
             {
                 parameters.Add(new DataParameter("@Nombre", newIdentificacion.Nombre));
                 parameters.Add(new DataParameter("@Activo", newIdentificacion.Activo));
-                parameters.Add(new DataParameter("@Resultado",SqlDbType.VarChar,100));
+                parameters.Add(new DataParameter("@Resultado", SqlDbType.VarChar, 100));
 
                 dataManager.ExecuteStoreProc("uspInsertTipoIdentificacion", parameters);
                 result = parameters[2].Value.ToString();
@@ -28,7 +27,7 @@ namespace BusinessLayer
             catch (Exception ex)
             {
 
-                result=ex.Message;
+                result = ex.Message;
             }
             return result;
         }
@@ -64,8 +63,8 @@ namespace BusinessLayer
             DataTable dt = dataManager.ExecuteQuery("uspGetAllTiposIdentificacion", null);
 
             lst = (from DataRow row in dt.Rows
-                   select new clsTipoIdentificacion 
-                   {Id = Convert.ToInt32(row["Id"]),Nombre = row["Nombre"].ToString(),Activo = Convert.ToBoolean(row["Activo"])}
+                   select new clsTipoIdentificacion
+                   { Id = Convert.ToInt32(row["Id"]), Nombre = row["Nombre"].ToString(), Activo = Convert.ToBoolean(row["Activo"]) }
                    ).ToList();
 
             return lst;

@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using DataAccessLayer;
+﻿using DataAccessLayer;
 using DreamSkyEntities;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -32,7 +31,7 @@ namespace BusinessLayer
             catch (Exception ex)
             {
 
-                result=ex.Message;
+                result = ex.Message;
             }
 
             return result;
@@ -66,14 +65,14 @@ namespace BusinessLayer
         public List<clsCategoriaProducto> GetAll()
         {
             List<clsCategoriaProducto> list = new List<clsCategoriaProducto>();
-            DataTable dt= dataManager.ExecuteQuery("uspGetAllProductCategories", null);
+            DataTable dt = dataManager.ExecuteQuery("uspGetAllProductCategories", null);
 
             list = (from DataRow row in dt.Rows
                     select new clsCategoriaProducto()
                     {
-                        Id=Convert.ToInt32(row["Id"]),
-                        Nombre=row["Nombre"].ToString(),
-                        Activo=Convert.ToBoolean(row["Activo"])
+                        Id = Convert.ToInt32(row["Id"]),
+                        Nombre = row["Nombre"].ToString(),
+                        Activo = Convert.ToBoolean(row["Activo"])
                     }).ToList();
 
             return list;
